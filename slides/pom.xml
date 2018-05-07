@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.gentics.mesh</groupId>
+		<artifactId>mesh-tech-stack-workshop</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>mesh-tech-stack-workshop-slides</artifactId>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- Process all .adoc files -->
+			<plugin>
+				<groupId>org.asciidoctor</groupId>
+				<artifactId>asciidoctor-maven-plugin</artifactId>
+				<version>1.5.6</version>
+				<executions>
+					<execution>
+						<id>output-html</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>process-asciidoc</goal>
+						</goals>
+						<configuration>
+							<backend>html</backend>
+							<doctype>book</doctype>
+							<relativeBaseDir>true</relativeBaseDir>
+							<preserveDirectories>true</preserveDirectories>
+							<eruby>erb</eruby>
+							<templateDir>${basedir}/src/adocs-templates</templateDir>
+							<attributes>
+								<stylesheet>/css/site.css</stylesheet>
+								<linkcss />
+							</attributes>
+							<sourceHighlighter>prettify</sourceHighlighter>
+							<attributes>
+								<icons>font</icons>
+								<toc>left</toc>
+							</attributes>
+							<sourceDirectory>${basedir}/src/docs</sourceDirectory>
+							<outputDirectory>${project.build.directory}/docs</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/static</directory>
+									<targetPath>${project.build.directory}/docs</targetPath>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</resource>
+							</resources>
+							<headerFooter>true</headerFooter>
+							<imagesDir>../resources/images</imagesDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
