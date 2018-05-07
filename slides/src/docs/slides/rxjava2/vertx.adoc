@@ -1,0 +1,20 @@
+++++
+<section>
+<h2>RxJava - Vert.x</h2>
+++++
+
+
+Direct integration with vert.x via
+
+[source,xml]
+----
+<dependency>
+    <groupId>io.vertx</groupId>
+    <artifactId>vertx-rx-java2</artifactId>
+    <version>3.5.1</version>
+</dependency>
+----
+
+++++
+</section>
+++++

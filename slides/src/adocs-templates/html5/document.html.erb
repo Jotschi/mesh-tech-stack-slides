@@ -7,11 +7,21 @@
 	</head>
 	<body>
 		<%= content %>
+		<script src="js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script src="js/highlight.min.js"></script>
-    	<script>hljs.initHighlightingOnLoad();</script>
+		<script>hljs.initHighlightingOnLoad();</script>
 		<script>
-			Reveal.initialize();
+			Reveal.initialize({
+		
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
 		</script>
 	</body>
 </html>

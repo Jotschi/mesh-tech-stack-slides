@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>RxJava - Chaining Requests</h2>
+++++
+
+[source,java]
+----
+include::../../../../../rxjava2/src/main/java/com/gentics/mesh/RxJavaClientExample.java[]
+----
+
+++++
+</section>
+++++

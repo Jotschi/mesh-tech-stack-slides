@@ -2,27 +2,54 @@
 ++++
 <div class="reveal">
 	<div class="slides">
-		<section>
 ++++
 
-Vert.x Web
+// Intro
 
-[source,java]
-----
-include::../../../vertx/src/main/java/com/gentics/mesh/VertxWebExample.java[lines=8..21]
-----
+include::slides/intro.adoc[]
+include::slides/intro2.adoc[]
+
+// Stack
+
+include::slides/stack/intro.adoc[]
+include::slides/stack/stack-requirements.adoc[]
+include::slides/stack/stack.adoc[]
+
+// Vert.x
+
+include::slides/vertx/intro.adoc[]
+include::slides/vertx/web.adoc[]
+include::slides/vertx/verticles.adoc[]
+include::slides/vertx/routing.adoc[]
+include::slides/vertx/pitfalls.adoc[]
+
+// RxJava2
+
+include::slides/rxjava2/intro.adoc[]
+include::slides/rxjava2/problem.adoc[]
+include::slides/rxjava2/vertx.adoc[]
+
+// Mesh
+
+include::slides/mesh/intro.adoc[]
+
+// GraphQL
+
+include::slides/graphql/intro.adoc[]
+
+// OrientDB
+
+include::slides/orientdb/intro.adoc[]
+include::slides/orientdb/tinkerpop.adoc[]
+include::slides/orientdb/choice.adoc[]
+
+// Dagger2
+
+include::slides/dagger2/intro.adoc[]
+include::slides/dagger2/choice.adoc[]
+
 
 ++++
-		</section>
-++++
-
-++++
-		<section>
-		slide2
-		</section>
-++++
-		
-++++	
 	</div>
 </div>
 ++++

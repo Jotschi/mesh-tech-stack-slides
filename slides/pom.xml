@@ -57,7 +57,7 @@
 								</resource>
 							</resources>
 							<headerFooter>true</headerFooter>
-							<imagesDir>../resources/images</imagesDir>
+							<imagesDir>images</imagesDir>
 						</configuration>
 					</execution>
 				</executions>

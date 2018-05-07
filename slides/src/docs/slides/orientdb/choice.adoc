@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>OrientDB</h2>
+++++
+
+* Embeddable
+* Direct vendor support for Tinkerpop API
+
+++++
+</section>
+++++
+
+

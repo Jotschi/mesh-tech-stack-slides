@@ -1,0 +1,10 @@
+++++
+<section>
+<h2>Building a Java headless CMS in 2018 using Vert.x</h2>
+
+<p>by</p>
+<p>Johannes Schüth</p>
+<p>Lead Developer of Gentics Mesh</p>
+
+</section>
+++++

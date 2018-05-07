@@ -12,4 +12,29 @@
 	<artifactId>mesh-tech-stack-workshop-mesh</artifactId>
 	<packaging>jar</packaging>
 
+	<properties>
+		<mesh.version>0.19.2</mesh.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.gentics.mesh</groupId>
+			<artifactId>mesh-rest-client</artifactId>
+			<version>${mesh.version}</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>maven.gentics.com</id>
+			<name>Gentics Maven Repository</name>
+			<url>https://maven.gentics.com/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 </project>

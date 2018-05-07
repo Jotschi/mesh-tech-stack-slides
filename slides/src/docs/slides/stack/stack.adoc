@@ -1,0 +1,20 @@
+++++
+<section>
+<h2>Technology Stack</h2>
+++++
+
+* Vert.x - Swiss army knife for HTTP
+* OrientDB Graph Database
+* Elasticsearch
+* Clustering
+* Dagger2
+* Gentics Mesh
+* RxJava2
+* GraphQL
+
+++++
+	<aside class="notes">
+		Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+	</aside>
+</section>
+++++

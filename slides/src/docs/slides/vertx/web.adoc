@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>Vert.x - Web</h2>
+++++
+
+[source,java]
+----
+include::../../../../../vertx/src/main/java/com/gentics/mesh/VertxWebExample.java[lines=8..21]
+----
+
+++++
+</section>
+++++

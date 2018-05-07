@@ -11,4 +11,14 @@
 
 	<artifactId>mesh-tech-stack-workshop-graphql</artifactId>
 	<packaging>jar</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java</artifactId>
+			<version>8.0</version>
+		</dependency>
+	</dependencies>
+
 </project>

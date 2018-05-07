@@ -1,0 +1,14 @@
+++++
+<section>
+<h2>Vert.x - Intro</h2>
+++++
+
+* Swiss army knife for HTTP
+* Reactive Framework
+* ASync API
+
+* https://github.com/vert-x3/vertx-guide-for-java-devs
+
+++++
+</section>
+++++

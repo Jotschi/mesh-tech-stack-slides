@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>Vert.x - Verticles</h2>
+++++
+
+[source,java]
+----
+include::../../../../../vertx/src/main/java/com/gentics/mesh/VertxVerticleExample.java[]
+----
+
+++++
+</section>
+++++
