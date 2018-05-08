@@ -8,7 +8,7 @@ public class DaggerApp {
 		JsonObject config = new JsonObject();
 		config.put("hello", "world");
 		AppComponent app = DaggerAppComponent.builder().configuration(config).build();
-		System.out.println(app.configuration().getString("hello"));
+		System.out.println(app.hello().getResult());
 	}
 
 }

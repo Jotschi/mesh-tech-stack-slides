@@ -12,6 +12,8 @@ public interface AppComponent {
 
 	JsonObject configuration();
 
+	HelloService hello();
+
 	@Component.Builder
 	interface Builder {
 		@BindsInstance
