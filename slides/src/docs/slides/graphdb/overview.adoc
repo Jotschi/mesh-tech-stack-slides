@@ -1,0 +1,10 @@
+++++
+<section>
+<h2>GraphDB - Stack</h2>
+++++
+
+image::graph-stack.png[]
+
+++++
+</section>
+++++

@@ -1,0 +1,22 @@
+++++
+<section>
+<h2>Ferma - Example</h2>
+++++
+
+[source,java]
+----
+public class User extends AbstractVertexFrame {
+
+  	public String getName() {
+		return getProperty("name");
+	}
+
+    public List<? extends User> getFriends() {
+    	return in(KNOWS).has(User.class).toListExplicit(User.class);
+	}
+}
+----
+
+++++
+</section>
+++++

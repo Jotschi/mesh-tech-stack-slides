@@ -1,0 +1,17 @@
+++++
+<section>
+<h2>GraphDB - Gremlin</h2>
+++++
+
+* Way to traverse a graph
+
+[source,java]
+----
+  // What are the names of Gremlin's friends' friends?
+  g.V().has("name","gremlin").
+    out("knows").out("knows").values("name")
+----
+
+++++
+</section>
+++++

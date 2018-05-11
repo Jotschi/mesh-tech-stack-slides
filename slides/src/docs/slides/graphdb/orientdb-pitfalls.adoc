@@ -1,0 +1,11 @@
+++++
+<section>
+<h2>GraphDB - OrientDB - Pitfalls</h2>
+++++
+
+* Running DB embedded is uncommon
+
+++++
+</section>
+++++
+

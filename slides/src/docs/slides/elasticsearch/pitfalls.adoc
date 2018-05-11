@@ -1,0 +1,11 @@
+++++
+<section>
+<h2>Elasticsearch - Pitfalls</h2>
+++++
+* Dynamic mapping can cause issues when input data is dynamic
+* Index types are gradually being deprecated
+++++
+</section>
+++++
+
+

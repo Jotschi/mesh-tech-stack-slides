@@ -35,19 +35,45 @@ include::slides/mesh/intro.adoc[]
 
 // GraphQL
 
+include::slides/graphql/choice.adoc[]
 include::slides/graphql/intro.adoc[]
+include::slides/graphql/intro-query.adoc[]
+include::slides/graphql/intro-output.adoc[]
+include::slides/graphql/pitfalls.adoc[]
+include::slides/graphql/usecase.adoc[]
 
-// OrientDB
+// Elasticsearch
 
-include::slides/orientdb/intro.adoc[]
-include::slides/orientdb/tinkerpop.adoc[]
-include::slides/orientdb/choice.adoc[]
+include::slides/elasticsearch/intro.adoc[]
+include::slides/elasticsearch/mesh.adoc[]
+include::slides/elasticsearch/pitfalls.adoc[]
+include::slides/elasticsearch/sync-diff-1.adoc[]
+include::slides/elasticsearch/sync-diff-2.adoc[]
+
+// GraphDB
+
+include::slides/graphdb/choice.adoc[]
+include::slides/graphdb/overview.adoc[]
+
+// GraphDB - Tinkerpop
+
+include::slides/graphdb/tinkerpop.adoc[]
+include::slides/graphdb/gremlin.adoc[]
+
+// Graph - Ferma
+
+include::slides/graphdb/ferma.adoc[]
+
+// Graph - OrientDB
+
+include::slides/graphdb/orientdb-intro.adoc[]
+include::slides/graphdb/orientdb-pitfalls.adoc[]
 
 // Dagger2
 
 include::slides/dagger2/intro.adoc[]
 include::slides/dagger2/choice.adoc[]
-
+include::slides/dagger2/pitfalls.adoc[]
 
 ++++
 	</div>

@@ -1,0 +1,12 @@
+++++
+<section>
+<h2>Dagger2 - Pitfalls</h2>
+++++
+
+* IDE integration can be tricky
+* Dagger code often needs to be fully regenerated
+
+++++
+</section>
+++++
+

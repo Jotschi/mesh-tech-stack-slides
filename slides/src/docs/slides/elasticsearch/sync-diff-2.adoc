@@ -1,0 +1,22 @@
+++++
+<section>
+<h2>Elasticsearch - Syncing</h2>
+++++
+
+* Compare both via ```com.google.common.collect.Maps#difference``` (Google Guava)
+
+[source,java]
+----
+Map<String, String> sourceVersions = loadVersionsFromGraph();
+
+Map<String, String> sinkVersions = loadVersionsFromIndex(indexName);
+MapDifference<String, String> diff = Maps.difference(sourceVersions, sinkVersions);
+
+Set<String> needInsertionInES = diff.entriesOnlyOnLeft().keySet();
+Set<String> needRemovalInES = diff.entriesOnlyOnRight().keySet();
+Set<String> needUpdate = diff.entriesDiffering().keySet();
+----
+
+++++
+</section>
+++++

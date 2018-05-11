@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>Elasticsearch - Syncing</h2>
+++++
+
+Differential sync per index
+* Assign hashsum to each document
+* Collect hashsums of all elements in the graph
+* Collect hashsums of all elements in the index
+
+++++
+</section>
+++++

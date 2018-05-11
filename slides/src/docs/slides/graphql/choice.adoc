@@ -1,0 +1,14 @@
+++++
+<section>
+<h2>GraphQL - Choice</h2>
+++++
+
+Solves two major problems
+
+* Overfetching 
+* Underfetching 
+* Loading deeply nested data structures
+
+++++
+</section>
+++++

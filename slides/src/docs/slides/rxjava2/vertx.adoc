@@ -3,8 +3,7 @@
 <h2>RxJava - Vert.x</h2>
 ++++
 
-
-Direct integration with vert.x via
+Direct integration with Vert.x via
 
 [source,xml]
 ----

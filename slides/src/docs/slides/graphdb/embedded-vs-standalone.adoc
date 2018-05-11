@@ -1,0 +1,19 @@
+++++
+<section>
+<h2>GraphDB - Embedded vs. Standalone</h2>
+++++
+
+Pro:
+* Maximum performance
+* Indices can be natively accessed
+
+Con:
+* Database lifecycle must be managed by application
+* Transactions may be bound to the executing thread
+
+++++
+	<aside class="notes">
+        * Explain that OrientDB for example does not support multithreaded transactions
+    </aside>
+</section>
+++++

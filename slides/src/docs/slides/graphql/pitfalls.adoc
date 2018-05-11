@@ -1,0 +1,11 @@
+++++
+<section>
+<h2>GraphQL - Pitfalls</h2>
+++++
+
+* Caching responses is not that easy
+* Error handling done via JSON
+
+++++
+</section>
+++++

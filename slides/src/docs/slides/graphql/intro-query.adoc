@@ -1,0 +1,25 @@
+++++
+<section>
+<h2>GraphQL - Query</h2>
+++++
+
+[source,json]
+----
+{
+  node(path: "/aircrafts/space-shuttle") {
+    uuid
+    fields {
+      ... on vehicle {
+        weight
+        price
+        slug
+        description
+      }
+    }
+  }
+}
+----
+
+++++
+</section>
+++++

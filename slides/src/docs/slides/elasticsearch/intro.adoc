@@ -1,0 +1,11 @@
+++++
+<section>
+<h2>Elasticsearch - Intro</h2>
+++++
+* Java based
+* Highly scaleable
+++++
+</section>
+++++
+
+

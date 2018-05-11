@@ -9,7 +9,7 @@
 
 ++++
 	<aside class="notes">
-		Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+		* Compare to older stacks (e.g. Java EE?)
 	</aside>
 </section>
 ++++

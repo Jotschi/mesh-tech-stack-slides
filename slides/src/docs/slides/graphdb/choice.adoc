@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>OrientDB</h2>
+<h2>GraphDB</h2>
 ++++
 
 * Embeddable
