@@ -87,6 +87,7 @@ include::slides/graphdb/pitfalls.adoc[]
 include::slides/dagger2/chapter.adoc[]
 
 include::slides/dagger2/intro.adoc[]
+include::slides/dagger2/problem.adoc[]
 include::slides/dagger2/choice.adoc[]
 
 include::slides/dagger2/java-example.adoc[]
