@@ -14,7 +14,7 @@ https://github.com/jotschi/mesh-tech-stack-workshop
 <h3>Slides</h3>
 ++++
 
-https://jotschi.github.io/mesh-tech-stack-workshop/docs/
+https://jotschi.github.io/mesh-tech-stack-workshop
 
 ++++
 </section>
