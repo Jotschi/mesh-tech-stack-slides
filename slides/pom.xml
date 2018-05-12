@@ -46,11 +46,11 @@
 								<toc>left</toc>
 							</attributes>
 							<sourceDirectory>${basedir}/src/docs</sourceDirectory>
-							<outputDirectory>${project.build.directory}/docs</outputDirectory>
+							<outputDirectory>${basedir}/docs</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${basedir}/src/static</directory>
-									<targetPath>${project.build.directory}/docs</targetPath>
+									<targetPath>${basedir}/docs</targetPath>
 									<includes>
 										<include>**/*</include>
 									</includes>

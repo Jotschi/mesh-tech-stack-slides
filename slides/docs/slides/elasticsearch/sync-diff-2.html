@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2>Elasticsearch - Syncing</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Compare both via <code><code>com.google.common.collect.Maps#difference</code></code> (Google Guava)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Map&lt;String, String&gt; sourceVersions = loadVersionsFromGraph();
+
+Map&lt;String, String&gt; sinkVersions = loadVersionsFromIndex(indexName);
+MapDifference&lt;String, String&gt; diff = Maps.difference(sourceVersions, sinkVersions);
+
+Set&lt;String&gt; needInsertionInES = diff.entriesOnlyOnLeft().keySet();
+Set&lt;String&gt; needRemovalInES = diff.entriesOnlyOnRight().keySet();
+Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+		
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

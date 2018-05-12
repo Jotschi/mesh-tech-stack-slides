@@ -1,0 +1,552 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<div class="reveal">
+	<div class="slides">
+<section>
+<h2>Building a Java headless CMS in 2018 using Vert.x</h2>
+
+<p>by</p>
+<p>Johannes Schüth</p>
+<p>Lead Developer of Gentics Mesh</p>
+
+</section>
+<section>
+<h2>Gentics Mesh</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Started in late 2014</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/github-graph.png" alt="github graph">
+</div>
+</div>
+</section>
+<section>
+<h2>Gentics Mesh Stack</h2>
+</section>
+<section>
+<h2>Technology Stack</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Lightweight and modern web framework</p>
+</li>
+<li>
+<p>Embeddable Graph Database</p>
+</li>
+<li>
+<p>Contents must be searchable</p>
+</li>
+</ul>
+</div>
+	<aside class="notes">
+		* Compare to older stacks (e.g. Java EE?)
+	</aside>
+</section>
+<section>
+<h2>Technology Stack</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Vert.x - Swiss army knife for HTTP</p>
+</li>
+<li>
+<p>OrientDB Graph Database</p>
+</li>
+<li>
+<p>Elasticsearch</p>
+</li>
+<li>
+<p>Clustering</p>
+</li>
+<li>
+<p>Dagger2</p>
+</li>
+<li>
+<p>Gentics Mesh</p>
+</li>
+<li>
+<p>RxJava2</p>
+</li>
+<li>
+<p>GraphQL</p>
+</li>
+</ul>
+</div>
+	<aside class="notes">
+		* note
+	</aside>
+</section>
+<section>
+<h2>Vert.x - Intro</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Swiss army knife for HTTP</p>
+</li>
+<li>
+<p>Reactive Framework</p>
+</li>
+<li>
+<p>ASync API</p>
+</li>
+<li>
+<p><a href="https://github.com/vert-x3/vertx-guide-for-java-devs" class="bare">https://github.com/vert-x3/vertx-guide-for-java-devs</a></p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Vert.x - Web</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">	public static void main(String[] args) {
+
+		Vertx vertx = Vertx.vertx();
+
+		Router router = Router.router(vertx);
+
+		router.route("/hello").handler(rc -&gt; {
+			rc.response().end("World");
+		});
+
+		vertx.createHttpServer()
+			.requestHandler(router::accept)
+			.listen(8080);
+	}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Vert.x - Verticles</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.mesh;
+
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Future;
+import io.vertx.core.Vertx;
+import io.vertx.core.logging.Logger;
+import io.vertx.core.logging.LoggerFactory;
+
+public class VertxVerticleExample {
+
+	public static void main(String[] args) {
+		Vertx vertx = Vertx.vertx();
+		vertx.deployVerticle(new TestVerticle());
+	}
+
+}
+
+class TestVerticle extends AbstractVerticle {
+
+	private static final Logger log = LoggerFactory.getLogger(TestVerticle.class);
+
+	@Override
+	public void start(Future&lt;Void&gt; startFuture) throws Exception {
+		log.info("Started");
+		startFuture.complete();
+	}
+
+	@Override
+	public void stop(Future&lt;Void&gt; stopFuture) throws Exception {
+		log.info("Stopped");
+		stopFuture.complete();
+	}
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Vert.x - Routing</h2>
+</section>
+<section>
+<h2>Vert.x - Pitfalls, Blunders and Mistakes</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Calling Vertx.vertx() multiple times</p>
+</li>
+<li>
+<p>Blocking the eventloop</p>
+</li>
+<li>
+<p>Blocking the worker pool</p>
+</li>
+<li>
+<p>Forgetting about open file handles</p>
+</li>
+<li>
+<p>Vertx-web sharing routers between verticles</p>
+</li>
+<li>
+<p>Using verticles to structure endpoints</p>
+</li>
+<li>
+<p>Websocket disconnects</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/17383089/libcurl-delays-for-1-second-before-uploading-data-command-line-curl-does-not" class="bare">https://stackoverflow.com/questions/17383089/libcurl-delays-for-1-second-before-uploading-data-command-line-curl-does-not</a></p>
+</li>
+<li>
+<p>Sharing the Vert.x webclient between verticles</p>
+</li>
+<li>
+<p>Blocking in the executeBlocking result handler</p>
+</li>
+<li>
+<p>Eventbus Loop</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>RxJava2</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Reactive Extensions for the JVM</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>RxJava - Chaining Requests</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Unresolved directive in slides/rxjava2/problem.adoc - include::../../../../../rxjava2/src/main/java/com/gentics/mesh/RxJavaClientExample.java[]</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>RxJava - Vert.x</h2>
+<div class="paragraph">
+<p>Direct integration with Vert.x via</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;io.vertx&lt;/groupId&gt;
+    &lt;artifactId&gt;vertx-rx-java2&lt;/artifactId&gt;
+    &lt;version&gt;3.5.1&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Gentics Mesh</h2>
+</section>
+<section>
+<h2>GraphQL - Choice</h2>
+<div class="paragraph">
+<p>Solves two major problems</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Overfetching</p>
+</li>
+<li>
+<p>Underfetching</p>
+</li>
+<li>
+<p>Loading deeply nested data structures</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>GraphQL - Intro</h2>
+</section>
+<section>
+<h2>GraphQL - Query</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
+  node(path: "/aircrafts/space-shuttle") {
+    uuid
+    fields {
+      ... on vehicle {
+        weight
+        price
+        slug
+        description
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphQL - Result</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
+  "data": {
+    "node": {
+      "uuid": "f915b16fa68f40e395b16fa68f10e32d",
+      "fields": {
+        "weight": 22700,
+        "price": 192000000000,
+        "slug": "space-shuttle",
+        "description": "The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA)."
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphQL - Pitfalls</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Caching responses is not that easy</p>
+</li>
+<li>
+<p>Error handling done via JSON</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>GraphQL - Usecase</h2>
+</section>
+<section>
+<h2>Elasticsearch - Intro</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Java based</p>
+</li>
+<li>
+<p>Highly scaleable</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Elasticsearch - Mesh</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Store</strong> mesh elements in indices (Users, Nodes, Groups)</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Elasticsearch - Pitfalls</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Dynamic mapping can cause issues when input data is dynamic</p>
+</li>
+<li>
+<p>Index types are gradually being deprecated</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Elasticsearch - Syncing</h2>
+<div class="paragraph">
+<p>Differential sync per index
+* Assign hashsum to each document
+* Collect hashsums of all elements in the graph
+* Collect hashsums of all elements in the index</p>
+</div>
+</section>
+<section>
+<h2>Elasticsearch - Syncing</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Compare both via <code><code>com.google.common.collect.Maps#difference</code></code> (Google Guava)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Map&lt;String, String&gt; sourceVersions = loadVersionsFromGraph();
+
+Map&lt;String, String&gt; sinkVersions = loadVersionsFromIndex(indexName);
+MapDifference&lt;String, String&gt; diff = Maps.difference(sourceVersions, sinkVersions);
+
+Set&lt;String&gt; needInsertionInES = diff.entriesOnlyOnLeft().keySet();
+Set&lt;String&gt; needRemovalInES = diff.entriesOnlyOnRight().keySet();
+Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphDB</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Embeddable</p>
+</li>
+<li>
+<p>Direct vendor support for Tinkerpop API</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>GraphDB - Stack</h2>
+<div class="imageblock">
+<div class="content">
+<img src="images/graph-stack.png" alt="graph stack">
+</div>
+</div>
+</section>
+<section>
+<h2>Apache Tinkerpop</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Open Source</p>
+</li>
+<li>
+<p>Vendor Agnostic API</p>
+</li>
+<li>
+<p>Supported by many graph database vendors</p>
+</li>
+<li>
+<p>Gremlin Traversal Language</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>GraphDB - Gremlin</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Way to traverse a graph</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">  // What are the names of Gremlin's friends' friends?
+  g.V().has("name","gremlin").
+    out("knows").out("knows").values("name")</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Ferma - Intro</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Object Graph Mapper library (OGM)</p>
+</li>
+<li>
+<p>Provides Java API to model your Graph Domain using classes</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>GraphDB - OrientDB</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Java based Graph Database</p>
+</li>
+<li>
+<p>First release in 2010</p>
+</li>
+<li>
+<p>Directly supports Tinkerpop API</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>GraphDB - OrientDB - Pitfalls</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Running DB embedded is uncommon</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Dagger2</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Dagger is a fully static, compile-time dependency injection framework for both Java.</p>
+</li>
+<li>
+<p>Now maintained by Google</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Dagger2</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Switched from Spring DI to Dagger 2</p>
+</li>
+<li>
+<p>Reduced startup time since no complex component-scanning is involved</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Dagger2 - Pitfalls</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>IDE integration can be tricky</p>
+</li>
+<li>
+<p>Dagger code often needs to be fully regenerated</p>
+</li>
+</ul>
+</div>
+</section>
+	</div>
+</div>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+		
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

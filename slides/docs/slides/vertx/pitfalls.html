@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2>Vert.x - Pitfalls, Blunders and Mistakes</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Calling Vertx.vertx() multiple times</p>
+</li>
+<li>
+<p>Blocking the eventloop</p>
+</li>
+<li>
+<p>Blocking the worker pool</p>
+</li>
+<li>
+<p>Forgetting about open file handles</p>
+</li>
+<li>
+<p>Vertx-web sharing routers between verticles</p>
+</li>
+<li>
+<p>Using verticles to structure endpoints</p>
+</li>
+<li>
+<p>Websocket disconnects</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/17383089/libcurl-delays-for-1-second-before-uploading-data-command-line-curl-does-not" class="bare">https://stackoverflow.com/questions/17383089/libcurl-delays-for-1-second-before-uploading-data-command-line-curl-does-not</a></p>
+</li>
+<li>
+<p>Sharing the Vert.x webclient between verticles</p>
+</li>
+<li>
+<p>Blocking in the executeBlocking result handler</p>
+</li>
+<li>
+<p>Eventbus Loop</p>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+		
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

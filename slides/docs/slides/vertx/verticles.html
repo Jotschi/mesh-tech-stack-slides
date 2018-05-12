@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2>Vert.x - Verticles</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.mesh;
+
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Future;
+import io.vertx.core.Vertx;
+import io.vertx.core.logging.Logger;
+import io.vertx.core.logging.LoggerFactory;
+
+public class VertxVerticleExample {
+
+	public static void main(String[] args) {
+		Vertx vertx = Vertx.vertx();
+		vertx.deployVerticle(new TestVerticle());
+	}
+
+}
+
+class TestVerticle extends AbstractVerticle {
+
+	private static final Logger log = LoggerFactory.getLogger(TestVerticle.class);
+
+	@Override
+	public void start(Future&lt;Void&gt; startFuture) throws Exception {
+		log.info("Started");
+		startFuture.complete();
+	}
+
+	@Override
+	public void stop(Future&lt;Void&gt; stopFuture) throws Exception {
+		log.info("Stopped");
+		stopFuture.complete();
+	}
+}</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+		
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

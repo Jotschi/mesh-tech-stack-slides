@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2>GraphQL - Result</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
+  "data": {
+    "node": {
+      "uuid": "f915b16fa68f40e395b16fa68f10e32d",
+      "fields": {
+        "weight": 22700,
+        "price": 192000000000,
+        "slug": "space-shuttle",
+        "description": "The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA)."
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+		
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>
