@@ -1,4 +1,4 @@
-package com.gentics.mesh;
+package com.gentics.vertx;
 
 import io.vertx.core.Vertx;
 import io.vertx.ext.web.Router;

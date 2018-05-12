@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>Eclipse Vert.x - Verticles</h2>
+++++
+
+[source,java,indent=0]
+----
+include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxVerticleExample.java[lines=18..33]
+----
+
+++++
+</section>
+++++

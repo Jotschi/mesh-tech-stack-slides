@@ -1,0 +1,13 @@
+++++
+<section>
+<h2>Dagger2 - Java</h2>
+++++
+
+[source,java,indent=0]
+----
+include::../../../../../dagger2/src/main/java/com/gentics/dagger2/AppComponent.java[]
+----
+
+++++
+</section>
+++++

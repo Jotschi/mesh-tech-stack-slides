@@ -1,0 +1,25 @@
+++++
+<section>
+<h2>GraphQL - GraphQL-Java</h2>
+++++
+
+* Java API to create GraphQL schema
+* Github: https://github.com/graphql-java/graphql-java
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.graphql-java</groupId>
+    <artifactId>graphql-java</artifactId>
+    <version>8.0</version>
+</dependency>
+----
+
+++++
+</section>
+++++
+
+
+
+
+

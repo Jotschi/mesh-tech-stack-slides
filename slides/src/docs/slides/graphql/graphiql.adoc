@@ -1,0 +1,12 @@
+++++
+<section>
+<h2>GraphQL - GraphiQL</h2>
+++++
+
+* https://demo.getmesh.io/api/v1/demo/graphql/browser
+
+image::graphiql.png[]
+
+++++
+</section>
+++++

@@ -12,7 +12,22 @@
 <h2>RxJava - Chaining Requests</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Unresolved directive in problem.adoc - include::../../../../../rxjava2/src/main/java/com/gentics/mesh/RxJavaClientExample.java[]</code></pre>
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">MeshRestClient client = MeshRestClient.create("localhost", Vertx.vertx());
+
+List&lt;String&gt; names = Arrays.asList("Iron Man",
+	"Captain America", "Star Lord",
+	"Black Widow", "Hulk");
+
+client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
+	return Observable.fromIterable(names).flatMapSingle(name -&gt; {
+
+		NodeCreateRequest request = new NodeCreateRequest();
+		request.setParentNodeUuid(project.getRootNode().getUuid());
+		request.setLanguage("en");
+
+		return client.createNode("MCU", request).toSingle();
+	}).ignoreElements();
+}).subscribe();</code></pre>
 </div>
 </div>
 </section>
@@ -24,7 +39,7 @@
 		<script>hljs.initHighlightingOnLoad();</script>
 		<script>
 			Reveal.initialize({
-		
+			center: false,
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

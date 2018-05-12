@@ -22,6 +22,11 @@
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-web</artifactId>
 		</dependency>
+		<dependency>
+			<artifactId>mesh-rest-client</artifactId>
+			<groupId>com.gentics.mesh</groupId>
+			<version>${mesh.version}</version>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -1,0 +1,14 @@
+++++
+<section>
+<h2>GraphQL - Examples</h2>
+++++
+
+* https://github.com/Jotschi/vertx-graphql-example
+* https://github.com/graphql-java/graphql-java/blob/master/src/test/groovy/graphql/GarfieldSchema.java
+
+++++
+</section>
+++++
+
+
+

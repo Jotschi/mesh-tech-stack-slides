@@ -1,0 +1,20 @@
+++++
+<section>
+<h2>Eclipse Vert.x - Pitfalls #1</h2>
+++++
+
+[source,java,indent=0]
+----
+include::../../../../../vertx/src/test/java/com/gentics/vertx/VertxPitfallTest.java[lines=26..35]
+----
+
+
+++++
+<p class="fragment">
+<img src="images/vertx-eventbus-bomb.png" alt="vertx thread bomb">
+</p>
+++++
+
+++++
+</section>
+++++

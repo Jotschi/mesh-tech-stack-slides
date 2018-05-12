@@ -1,0 +1,21 @@
+++++
+<section>
+<h2>Eclipse Vert.x - Pitfalls #1</h2>
+++++
+
+[source,java,indent=0]
+----
+for (int i = 0; i < 10000; i++) {
+	Vertx.vertx();
+}
+----
+
+++++
+<p class="fragment">
+<img src="images/vertx-thread-bomb.png" alt="vertx thread bomb">
+</p>
+++++
+
+++++
+</section>
+++++

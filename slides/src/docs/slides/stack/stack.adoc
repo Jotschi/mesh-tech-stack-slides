@@ -1,20 +1,25 @@
 ++++
 <section>
-<h2>Technology Stack</h2>
+<h2>Technology Stack - 2018</h2>
 ++++
 
-* Vert.x - Swiss army knife for HTTP
+* Vert.x
 * OrientDB Graph Database
 * Elasticsearch
-* Clustering
 * Dagger2
-* Gentics Mesh
 * RxJava2
 * GraphQL
+* Hazelcast
 
 ++++
 	<aside class="notes">
-		* note
+		* Vert.x for HTTP
+		* OrientDB for Storage
+		* Elasticsearch for Search
+		* Dagger2 for DI
+		* RxJava2 for Clean RX code
+		* GraphQL for querying data
+		* Hazelcast for Clustering
 	</aside>
 </section>
 ++++

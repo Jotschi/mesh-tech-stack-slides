@@ -1,0 +1,15 @@
+++++
+<section>
+<h2>Headless CMS - Requirements</h2>
+++++
+
+* binary storage
+* searchable contents
+* image resizing
+* manage contents in tree structures
+* versioning
+* link handling
+
+++++
+</section>
+++++

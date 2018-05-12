@@ -1,0 +1,11 @@
+++++
+<section>
+<h2>Headless CMS - Intro</h2>
+++++
+
+* back-end only CMS
+* Contents can be accessed via RESTful API
+
+++++
+</section>
+++++

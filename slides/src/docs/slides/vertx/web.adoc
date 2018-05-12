@@ -1,11 +1,11 @@
 ++++
 <section>
-<h2>Vert.x - Web</h2>
+<h2>Eclipse Vert.x - Web</h2>
 ++++
 
-[source,java]
+[source,java,indent=0]
 ----
-include::../../../../../vertx/src/main/java/com/gentics/mesh/VertxWebExample.java[lines=8..21]
+include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxWebExample.java[lines=8..21]
 ----
 
 ++++

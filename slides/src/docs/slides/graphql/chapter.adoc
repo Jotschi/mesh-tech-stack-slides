@@ -1,5 +1,8 @@
 ++++
 <section>
-<h2>Gentics Mesh Stack</h2>
+<h1>GraphQL</h1>
+++++
+
+++++
 </section>
 ++++

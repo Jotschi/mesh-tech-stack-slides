@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Vert.x - Pitfalls, Blunders and Mistakes</h2>
+<h2>Eclipse Vert.x - Pitfalls, Blunders and Mistakes</h2>
 ++++
 
 * Calling Vertx.vertx() multiple times
@@ -18,7 +18,3 @@
 ++++
 </section>
 ++++
-
-
-
-

@@ -9,41 +9,31 @@
 		<div id="preamble">
 <div class="sectionbody">
 <section>
-<h2>Vert.x - Verticles</h2>
+<h2>Eclipse Vert.x - Verticles</h2>
+<div class="paragraph">
+<p>Deployable from/via:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maven</p>
+</li>
+<li>
+<p>Fully qualified class name</p>
+</li>
+<li>
+<p>Jar</p>
+</li>
+<li>
+<p>Instances</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.mesh;
-
-import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
-import io.vertx.core.Vertx;
-import io.vertx.core.logging.Logger;
-import io.vertx.core.logging.LoggerFactory;
-
-public class VertxVerticleExample {
-
-	public static void main(String[] args) {
-		Vertx vertx = Vertx.vertx();
-		vertx.deployVerticle(new TestVerticle());
-	}
-
-}
-
-class TestVerticle extends AbstractVerticle {
-
-	private static final Logger log = LoggerFactory.getLogger(TestVerticle.class);
-
-	@Override
-	public void start(Future&lt;Void&gt; startFuture) throws Exception {
-		log.info("Started");
-		startFuture.complete();
-	}
-
-	@Override
-	public void stop(Future&lt;Void&gt; stopFuture) throws Exception {
-		log.info("Stopped");
-		stopFuture.complete();
-	}
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
+	Vertx vertx = Vertx.vertx();
+	vertx.deployVerticle(new TestVerticle());
 }</code></pre>
 </div>
 </div>
@@ -56,7 +46,7 @@ class TestVerticle extends AbstractVerticle {
 		<script>hljs.initHighlightingOnLoad();</script>
 		<script>
 			Reveal.initialize({
-		
+			center: false,
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

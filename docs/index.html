@@ -34,10 +34,48 @@
 </div>
 </section>
 <section>
-<h2>Gentics Mesh Stack</h2>
+<h2>Headless CMS - Intro</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>back-end only CMS</p>
+</li>
+<li>
+<p>Contents can be accessed via RESTful API</p>
+</li>
+</ul>
+</div>
 </section>
 <section>
-<h2>Technology Stack</h2>
+<h2>Headless CMS - Requirements</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>binary storage</p>
+</li>
+<li>
+<p>searchable contents</p>
+</li>
+<li>
+<p>image resizing</p>
+</li>
+<li>
+<p>manage contents in tree structures</p>
+</li>
+<li>
+<p>versioning</p>
+</li>
+<li>
+<p>link handling</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h1>Gentics Mesh Stack</h1>
+</section>
+<section>
+<h2>Technology Stack - Requirements</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -56,11 +94,11 @@
 	</aside>
 </section>
 <section>
-<h2>Technology Stack</h2>
+<h2>Technology Stack - 2018</h2>
 <div class="ulist">
 <ul>
 <li>
-<p>Vert.x - Swiss army knife for HTTP</p>
+<p>Vert.x</p>
 </li>
 <li>
 <p>OrientDB Graph Database</p>
@@ -69,13 +107,7 @@
 <p>Elasticsearch</p>
 </li>
 <li>
-<p>Clustering</p>
-</li>
-<li>
 <p>Dagger2</p>
-</li>
-<li>
-<p>Gentics Mesh</p>
 </li>
 <li>
 <p>RxJava2</p>
@@ -83,14 +115,26 @@
 <li>
 <p>GraphQL</p>
 </li>
+<li>
+<p>Hazelcast</p>
+</li>
 </ul>
 </div>
 	<aside class="notes">
-		* note
+		* Vert.x for HTTP
+		* OrientDB for Storage
+		* Elasticsearch for Search
+		* Dagger2 for DI
+		* RxJava2 for Clean RX code
+		* GraphQL for querying data
+		* Hazelcast for Clustering
 	</aside>
 </section>
 <section>
-<h2>Vert.x - Intro</h2>
+<h1>Eclipse Vert.x</h1>
+</section>
+<section>
+<h2>Eclipse Vert.x - Intro</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -109,48 +153,61 @@
 </div>
 </section>
 <section>
-<h2>Vert.x - Web</h2>
+<h2>Eclipse Vert.x - Web</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">	public static void main(String[] args) {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
 
-		Vertx vertx = Vertx.vertx();
+	Vertx vertx = Vertx.vertx();
 
-		Router router = Router.router(vertx);
+	Router router = Router.router(vertx);
 
-		router.route("/hello").handler(rc -&gt; {
-			rc.response().end("World");
-		});
+	router.route("/hello").handler(rc -&gt; {
+		rc.response().end("World");
+	});
 
-		vertx.createHttpServer()
-			.requestHandler(router::accept)
-			.listen(8080);
-	}</code></pre>
+	vertx.createHttpServer()
+		.requestHandler(router::accept)
+		.listen(8080);
+}</code></pre>
 </div>
 </div>
 </section>
 <section>
-<h2>Vert.x - Verticles</h2>
+<h2>Eclipse Vert.x - Verticles</h2>
+<div class="paragraph">
+<p>Deployable from/via:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maven</p>
+</li>
+<li>
+<p>Fully qualified class name</p>
+</li>
+<li>
+<p>Jar</p>
+</li>
+<li>
+<p>Instances</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.mesh;
-
-import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
-import io.vertx.core.Vertx;
-import io.vertx.core.logging.Logger;
-import io.vertx.core.logging.LoggerFactory;
-
-public class VertxVerticleExample {
-
-	public static void main(String[] args) {
-		Vertx vertx = Vertx.vertx();
-		vertx.deployVerticle(new TestVerticle());
-	}
-
-}
-
-class TestVerticle extends AbstractVerticle {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
+	Vertx vertx = Vertx.vertx();
+	vertx.deployVerticle(new TestVerticle());
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Eclipse Vert.x - Verticles</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">class TestVerticle extends AbstractVerticle {
 
 	private static final Logger log = LoggerFactory.getLogger(TestVerticle.class);
 
@@ -170,10 +227,10 @@ class TestVerticle extends AbstractVerticle {
 </div>
 </section>
 <section>
-<h2>Vert.x - Routing</h2>
+<h2>Eclipse Vert.x - Routing</h2>
 </section>
 <section>
-<h2>Vert.x - Pitfalls, Blunders and Mistakes</h2>
+<h2>Eclipse Vert.x - Pitfalls, Blunders and Mistakes</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -213,6 +270,39 @@ class TestVerticle extends AbstractVerticle {
 </div>
 </section>
 <section>
+<h2>Eclipse Vert.x - Pitfalls #1</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">for (int i = 0; i &lt; 10000; i++) {
+	Vertx.vertx();
+}</code></pre>
+</div>
+</div>
+<p class="fragment">
+<img src="images/vertx-thread-bomb.png" alt="vertx thread bomb">
+</p>
+</section>
+<section>
+<h2>Eclipse Vert.x - Pitfalls #1</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">final String ADDR = "dummy";
+Vertx vertx = Vertx.vertx();
+EventBus bus = vertx.eventBus();
+
+bus.consumer(ADDR, rh -&gt; {
+	bus.publish(ADDR, "hello-world");
+	bus.publish(ADDR, "hello-world");
+});
+
+bus.publish(ADDR, "hello-world");</code></pre>
+</div>
+</div>
+<p class="fragment">
+<img src="images/vertx-eventbus-bomb.png" alt="vertx thread bomb">
+</p>
+</section>
+<section>
 <h2>RxJava2</h2>
 <div class="ulist">
 <ul>
@@ -226,7 +316,22 @@ class TestVerticle extends AbstractVerticle {
 <h2>RxJava - Chaining Requests</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Unresolved directive in slides/rxjava2/problem.adoc - include::../../../../../rxjava2/src/main/java/com/gentics/mesh/RxJavaClientExample.java[]</code></pre>
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">MeshRestClient client = MeshRestClient.create("localhost", Vertx.vertx());
+
+List&lt;String&gt; names = Arrays.asList("Iron Man",
+	"Captain America", "Star Lord",
+	"Black Widow", "Hulk");
+
+client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
+	return Observable.fromIterable(names).flatMapSingle(name -&gt; {
+
+		NodeCreateRequest request = new NodeCreateRequest();
+		request.setParentNodeUuid(project.getRootNode().getUuid());
+		request.setLanguage("en");
+
+		return client.createNode("MCU", request).toSingle();
+	}).ignoreElements();
+}).subscribe();</code></pre>
 </div>
 </div>
 </section>
@@ -244,9 +349,16 @@ class TestVerticle extends AbstractVerticle {
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import io.vertx.reactivex.core.Vertx;
+…
+Vertx vertx = Vertx.vertx();</code></pre>
+</div>
+</div>
 </section>
 <section>
-<h2>Gentics Mesh</h2>
+<h1>GraphQL</h1>
 </section>
 <section>
 <h2>GraphQL - Choice</h2>
@@ -311,6 +423,21 @@ class TestVerticle extends AbstractVerticle {
 </div>
 </section>
 <section>
+<h2>GraphQL - GraphiQL</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://demo.getmesh.io/api/v1/demo/graphql/browser" class="bare">https://demo.getmesh.io/api/v1/demo/graphql/browser</a></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/graphiql.png" alt="graphiql">
+</div>
+</div>
+</section>
+<section>
 <h2>GraphQL - Pitfalls</h2>
 <div class="ulist">
 <ul>
@@ -325,6 +452,189 @@ class TestVerticle extends AbstractVerticle {
 </section>
 <section>
 <h2>GraphQL - Usecase</h2>
+</section>
+<section>
+<h2>GraphQL - Underfetching</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>The response of the server is lacking information you need</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#8594; Execute additional requests to load the data
+&#8594; Causes additional delays</p>
+</div>
+</section>
+<section>
+<h2>GraphQL - Overfetching</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>The response of the server contains more information then you need.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#8594; The data superfluous data still needs to be loaded
+&#8594; Causes additional delays and load on the system</p>
+</div>
+</section>
+<section>
+<h2>GraphQL - GraphQL-Java</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Java API to create GraphQL schema</p>
+</li>
+<li>
+<p>Github: <a href="https://github.com/graphql-java/graphql-java" class="bare">https://github.com/graphql-java/graphql-java</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.graphql-java&lt;/groupId&gt;
+    &lt;artifactId&gt;graphql-java&lt;/artifactId&gt;
+    &lt;version&gt;8.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphQL - Domain Model</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Demo {
+
+	private final String name;
+	private final String id;
+
+	public Demo(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+public class RootElement {
+
+	private final Demo demo;
+
+	public RootElement(Demo demo) {
+		this.demo = demo;
+	}
+
+	public Demo getDemo() {
+		return demo;
+	}
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphQL - Schema</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.graphql;
+
+import static graphql.Scalars.GraphQLString;
+import static graphql.schema.GraphQLFieldDefinition.newFieldDefinition;
+import static graphql.schema.GraphQLObjectType.newObject;
+
+import com.gentics.graphql.domain.RootElement;
+
+import graphql.schema.GraphQLNonNull;
+import graphql.schema.GraphQLObjectType;
+import graphql.schema.GraphQLSchema;
+
+public class DemoSchema {
+
+	private static GraphQLObjectType createQueryType() {
+		return newObject().name("QueryType")
+
+			// .demo
+			.field(newFieldDefinition().name("demo")
+				.type(createDemoType())
+				.dataFetcher((env) -&gt; {
+					RootElement root = env.getSource();
+					return root.getDemo();
+				}))
+
+			.build();
+	}
+
+	private static GraphQLObjectType createDemoType() {
+		return newObject().name("Demo")
+			.description("A demo element")
+
+			// .id
+			.field(newFieldDefinition().name("id")
+				.description("The id of the character.")
+				.type(new GraphQLNonNull(GraphQLString)))
+
+			// .name
+			.field(newFieldDefinition().name("name")
+				.description("The name of the element.")
+				.type(GraphQLString))
+
+			.build();
+	}
+
+	public static GraphQLSchema createSchema() {
+		return GraphQLSchema.newSchema()
+			.query(createQueryType())
+			.build();
+	}
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphQL - Query</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">		// .demo
+		.field(newFieldDefinition().name("demo")
+			.type(createDemoType())
+			.dataFetcher((env) -&gt; {
+				RootElement root = env.getSource();
+				return root.getDemo();
+			}))
+
+		.build();
+}
+
+private static GraphQLObjectType createDemoType() {
+	return newObject().name("Demo")
+		.description("A demo element")
+
+		// .id
+		.field(newFieldDefinition().name("id")
+			.description("The id of the character.")
+			.type(new GraphQLNonNull(GraphQLString)))
+
+		// .name
+		.field(newFieldDefinition().name("name")
+			.description("The name of the element.")
+			.type(GraphQLString))</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>GraphQL - Examples</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/Jotschi/vertx-graphql-example" class="bare">https://github.com/Jotschi/vertx-graphql-example</a></p>
+</li>
+<li>
+<p><a href="https://github.com/graphql-java/graphql-java/blob/master/src/test/groovy/graphql/GarfieldSchema.java" class="bare">https://github.com/graphql-java/graphql-java/blob/master/src/test/groovy/graphql/GarfieldSchema.java</a></p>
+</li>
+</ul>
+</div>
 </section>
 <section>
 <h2>Elasticsearch - Intro</h2>
@@ -464,6 +774,39 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
+<h2>Ferma - Mesh Domain Model</h2>
+<div class="imageblock">
+<div class="content">
+<img src="images/domain-model.png" alt="domain model">
+</div>
+</div>
+</section>
+<section>
+<h2>Ferma - Mesh Domain Model</h2>
+<div class="imageblock">
+<div class="content">
+<img src="images/domain-model-2.png" alt="domain model 2">
+</div>
+</div>
+</section>
+<section>
+<h2>Ferma - Example</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class User extends AbstractVertexFrame {
+
+  	public String getName() {
+		return getProperty("name");
+	}
+
+    public List&lt;? extends User&gt; getFriends() {
+    	return in(KNOWS).has(User.class).toListExplicit(User.class);
+	}
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
 <h2>GraphDB - OrientDB</h2>
 <div class="ulist">
 <ul>
@@ -516,6 +859,88 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
+<h2>Dagger2 - Java</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.dagger2;
+
+import javax.inject.Singleton;
+
+import dagger.BindsInstance;
+import dagger.Component;
+import io.vertx.core.json.JsonObject;
+
+@Singleton
+@Component(modules = { AppModule.class })
+public interface AppComponent {
+
+	JsonObject configuration();
+
+	HelloService hello();
+
+	@Component.Builder
+	interface Builder {
+		@BindsInstance
+		Builder configuration(JsonObject configuration);
+
+		AppComponent build();
+	}
+
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Dagger2 - Java</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.dagger2;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+import io.vertx.core.json.JsonObject;
+
+@Singleton
+public class HelloService {
+
+	@Inject
+	JsonObject configuration;
+
+	@Inject
+	public HelloService() {
+	}
+
+	public String getResult() {
+		return configuration.getString("hello");
+	}
+
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>Dagger2 - Java</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.dagger2;
+
+import io.vertx.core.json.JsonObject;
+
+public class DaggerApp {
+
+	public static void main(String[] args) {
+		JsonObject config = new JsonObject();
+		config.put("hello", "world");
+		AppComponent app = DaggerAppComponent.builder().configuration(config).build();
+		System.out.println(app.hello().getResult());
+	}
+
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
 <h2>Dagger2 - Pitfalls</h2>
 <div class="ulist">
 <ul>
@@ -524,6 +949,19 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </li>
 <li>
 <p>Dagger code often needs to be fully regenerated</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>Thank you</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>GithHub: <a href="https://github.com/gentics/mesh" class="bare">https://github.com/gentics/mesh</a></p>
+</li>
+<li>
+<p>Slides: <a href="https://jotschi.github.io/mesh-tech-stack-workshop/docs/" class="bare">https://jotschi.github.io/mesh-tech-stack-workshop/docs/</a></p>
 </li>
 </ul>
 </div>
@@ -538,7 +976,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 		<script>hljs.initHighlightingOnLoad();</script>
 		<script>
 			Reveal.initialize({
-		
+			center: false,
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

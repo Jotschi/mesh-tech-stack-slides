@@ -1,11 +1,18 @@
 ++++
 <section>
-<h2>Vert.x - Verticles</h2>
+<h2>Eclipse Vert.x - Verticles</h2>
 ++++
 
-[source,java]
+Deployable from/via:
+
+* Maven
+* Fully qualified class name
+* Jar
+* Instances
+
+[source,java,indent=0]
 ----
-include::../../../../../vertx/src/main/java/com/gentics/mesh/VertxVerticleExample.java[]
+include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxVerticleExample.java[lines=11..14]
 ----
 
 ++++

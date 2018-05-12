@@ -1,0 +1,11 @@
+++++
+<section>
+<h2>Thank you</h2>
+++++
+
+* GithHub: https://github.com/gentics/mesh
+* Slides: https://jotschi.github.io/mesh-tech-stack-workshop/docs/
+
+++++
+</section>
+++++

@@ -1,4 +1,4 @@
-package com.gentics.mesh;
+package com.gentics.dagger2;
 
 import io.vertx.core.json.JsonObject;
 

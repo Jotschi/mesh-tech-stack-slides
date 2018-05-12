@@ -3,9 +3,9 @@
 <h2>RxJava - Chaining Requests</h2>
 ++++
 
-[source,java]
+[source,java,indent=0]
 ----
-include::../../../../../rxjava2/src/main/java/com/gentics/mesh/RxJavaClientExample.java[]
+include::../../../../../mesh/src/main/java/com/gentics/mesh/RxJavaClientExample.java[lines=16..31]
 ----
 
 ++++
