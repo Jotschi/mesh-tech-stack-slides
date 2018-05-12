@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphDB - OrientDB</h2>
+<h2><span class="component">GraphDB</span> - OrientDB</h2>
 ++++
  * Java based Graph Database
  * First release in 2010

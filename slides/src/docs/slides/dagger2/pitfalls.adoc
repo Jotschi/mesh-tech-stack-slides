@@ -1,9 +1,13 @@
 ++++
 <section>
-<h2>Dagger2 - Pitfalls</h2>
+<h2><span class="component">Dagger2</span> - Pitfalls</h2>
 ++++
 
 * IDE integration can be tricky
+
+image::dagger-eclipse-ide.png[]
+
+
 * Dagger code often needs to be fully regenerated
 
 ++++

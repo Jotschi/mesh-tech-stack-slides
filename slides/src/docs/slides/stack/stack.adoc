@@ -3,7 +3,7 @@
 <h2>Technology Stack - 2018</h2>
 ++++
 
-* Vert.x
+* Eclipse Vert.x
 * OrientDB Graph Database
 * Elasticsearch
 * Dagger2

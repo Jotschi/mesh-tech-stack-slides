@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - Result</h2>
+<h2><span class="component">GraphQL</span> - Result</h2>
 ++++
 
 [source,json]

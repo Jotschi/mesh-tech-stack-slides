@@ -1,9 +1,9 @@
 ++++
 <section>
-<h2>GraphQL - GraphiQL</h2>
+<h2><span class="component">GraphQL</span> - GraphiQL</h2>
 ++++
 
-* https://demo.getmesh.io/api/v1/demo/graphql/browser
+* demo.getmesh.io/api/v1/demo/graphql/browser
 
 image::graphiql.png[]
 

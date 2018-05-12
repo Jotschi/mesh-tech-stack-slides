@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Elasticsearch - Syncing</h2>
+<h2><span class="component">Elasticsearch</span> - Syncing</h2>
 ++++
 
 Differential sync per index

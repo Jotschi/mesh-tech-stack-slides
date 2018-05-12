@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Eclipse Vert.x - Intro</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Intro</span></h2>
 ++++
 
 * Swiss army knife for HTTP

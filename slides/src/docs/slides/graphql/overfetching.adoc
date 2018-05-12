@@ -1,11 +1,12 @@
 ++++
 <section>
-<h2>GraphQL - Overfetching</h2>
+<h2><span class="component">GraphQL</span> - Overfetching</h2>
 ++++
 
-* The response of the server contains more information then you need.
+* The response of the server contains more information then you need
 
 -> The data superfluous data still needs to be loaded
+
 -> Causes additional delays and load on the system
 
 ++++

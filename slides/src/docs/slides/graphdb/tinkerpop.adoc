@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Apache Tinkerpop</h2>
+<h2><span class="component">GraphDB</span> - Apache Tinkerpop</h2>
 ++++
 
 * Open Source

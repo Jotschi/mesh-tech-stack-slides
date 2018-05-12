@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>RxJava2</h2>
+<h2><span class="component">RxJava2</span></h2>
 ++++
 
 * Reactive Extensions for the JVM

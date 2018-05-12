@@ -9,7 +9,7 @@
 		<div id="preamble">
 <div class="sectionbody">
 <section>
-<h2>Ferma - Example</h2>
+<h2><span class="component">Ferma</span> - Example</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class User extends AbstractVertexFrame {
@@ -18,8 +18,8 @@
 		return getProperty("name");
 	}
 
-    public List&lt;? extends User&gt; getFriends() {
-    	return in(KNOWS).has(User.class).toListExplicit(User.class);
+	public List&lt;? extends User&gt; getFriends() {
+		return in(KNOWS).has(User.class).toListExplicit(User.class);
 	}
 }</code></pre>
 </div>

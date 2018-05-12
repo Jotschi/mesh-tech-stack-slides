@@ -3,7 +3,9 @@
 <h2>Gentics Mesh</h2>
 ++++
 
-* Started in late 2014
+* Started in 11/2014
+* First public release 04/2016
+* Open source since 07/2016
 
 image::github-graph.png[]
 

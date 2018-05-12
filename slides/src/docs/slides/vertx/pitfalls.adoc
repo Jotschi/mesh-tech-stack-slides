@@ -1,9 +1,8 @@
 ++++
 <section>
-<h2>Eclipse Vert.x - Pitfalls, Blunders and Mistakes</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls</h2>
 ++++
 
-* Calling Vertx.vertx() multiple times
 * Blocking the eventloop
 * Blocking the worker pool
 * Forgetting about open file handles
@@ -13,7 +12,6 @@
 * https://stackoverflow.com/questions/17383089/libcurl-delays-for-1-second-before-uploading-data-command-line-curl-does-not
 * Sharing the Vert.x webclient between verticles
 * Blocking in the executeBlocking result handler
-* Eventbus Loop
 
 ++++
 </section>

@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - Schema</h2>
+<h2><span class="component">GraphQL</span> - Schema</h2>
 ++++
 
 [source,java,indent=0]

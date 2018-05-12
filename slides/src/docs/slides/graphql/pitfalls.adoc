@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - Pitfalls</h2>
+<h2><span class="component">GraphQL</span> - Pitfalls</h2>
 ++++
 
 * Caching responses is not that easy

@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>RxJava - Chaining Requests</h2>
+<h2><span class="component">RxJava2</span> - Chaining Requests</h2>
 ++++
 
 [source,java,indent=0]

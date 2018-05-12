@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>RxJava - Vert.x</h2>
+<h2><span class="component">RxJava2</span> - Vert.x</h2>
 ++++
 
 Direct integration with Vert.x via

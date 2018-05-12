@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Eclipse Vert.x - Web</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Web</h2>
 ++++
 
 [source,java,indent=0]

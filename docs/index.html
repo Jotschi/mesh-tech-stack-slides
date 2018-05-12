@@ -23,7 +23,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Started in late 2014</p>
+<p>Started in 11/2014</p>
+</li>
+<li>
+<p>First public release 04/2016</p>
+</li>
+<li>
+<p>Open source since 07/2016</p>
 </li>
 </ul>
 </div>
@@ -98,7 +104,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Vert.x</p>
+<p>Eclipse Vert.x</p>
 </li>
 <li>
 <p>OrientDB Graph Database</p>
@@ -134,7 +140,7 @@
 <h1>Eclipse Vert.x</h1>
 </section>
 <section>
-<h2>Eclipse Vert.x - Intro</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Intro</span></h2>
 <div class="ulist">
 <ul>
 <li>
@@ -153,7 +159,7 @@
 </div>
 </section>
 <section>
-<h2>Eclipse Vert.x - Web</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Web</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
@@ -174,7 +180,7 @@
 </div>
 </section>
 <section>
-<h2>Eclipse Vert.x - Verticles</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Verticles</h2>
 <div class="paragraph">
 <p>Deployable from/via:</p>
 </div>
@@ -204,7 +210,7 @@
 </div>
 </section>
 <section>
-<h2>Eclipse Vert.x - Verticles</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Verticles</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">class TestVerticle extends AbstractVerticle {
@@ -227,15 +233,12 @@
 </div>
 </section>
 <section>
-<h2>Eclipse Vert.x - Routing</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Routing</h2>
 </section>
 <section>
-<h2>Eclipse Vert.x - Pitfalls, Blunders and Mistakes</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls</h2>
 <div class="ulist">
 <ul>
-<li>
-<p>Calling Vertx.vertx() multiple times</p>
-</li>
 <li>
 <p>Blocking the eventloop</p>
 </li>
@@ -263,14 +266,11 @@
 <li>
 <p>Blocking in the executeBlocking result handler</p>
 </li>
-<li>
-<p>Eventbus Loop</p>
-</li>
 </ul>
 </div>
 </section>
 <section>
-<h2>Eclipse Vert.x - Pitfalls #1</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #1</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">for (int i = 0; i &lt; 10000; i++) {
@@ -283,7 +283,7 @@
 </p>
 </section>
 <section>
-<h2>Eclipse Vert.x - Pitfalls #1</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #1</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">final String ADDR = "dummy";
@@ -303,7 +303,10 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </p>
 </section>
 <section>
-<h2>RxJava2</h2>
+<h1>RxJava2</h1>
+</section>
+<section>
+<h2><span class="component">RxJava2</span></h2>
 <div class="ulist">
 <ul>
 <li>
@@ -313,7 +316,7 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </div>
 </section>
 <section>
-<h2>RxJava - Chaining Requests</h2>
+<h2><span class="component">RxJava2</span> - Chaining Requests</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">MeshRestClient client = MeshRestClient.create("localhost", Vertx.vertx());
@@ -336,7 +339,7 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 </div>
 </section>
 <section>
-<h2>RxJava - Vert.x</h2>
+<h2><span class="component">RxJava2</span> - Vert.x</h2>
 <div class="paragraph">
 <p>Direct integration with Vert.x via</p>
 </div>
@@ -361,7 +364,7 @@ Vertx vertx = Vertx.vertx();</code></pre>
 <h1>GraphQL</h1>
 </section>
 <section>
-<h2>GraphQL - Choice</h2>
+<h2><span class="component">GraphQL</span> - Choice</h2>
 <div class="paragraph">
 <p>Solves two major problems</p>
 </div>
@@ -380,10 +383,10 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphQL - Intro</h2>
+<h2><span class="component">GraphQL</span> - Intro</h2>
 </section>
 <section>
-<h2>GraphQL - Query</h2>
+<h2><span class="component">GraphQL</span> - Query</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
@@ -403,7 +406,7 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphQL - Result</h2>
+<h2><span class="component">GraphQL</span> - Result</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
@@ -423,11 +426,11 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphQL - GraphiQL</h2>
+<h2><span class="component">GraphQL</span> - GraphiQL</h2>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://demo.getmesh.io/api/v1/demo/graphql/browser" class="bare">https://demo.getmesh.io/api/v1/demo/graphql/browser</a></p>
+<p>demo.getmesh.io/api/v1/demo/graphql/browser</p>
 </li>
 </ul>
 </div>
@@ -438,7 +441,7 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphQL - Pitfalls</h2>
+<h2><span class="component">GraphQL</span> - Pitfalls</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -451,10 +454,10 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphQL - Usecase</h2>
+<h2><span class="component">GraphQL</span> - Usecase</h2>
 </section>
 <section>
-<h2>GraphQL - Underfetching</h2>
+<h2><span class="component">GraphQL</span> - Underfetching</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -463,26 +466,30 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>&#8594; Execute additional requests to load the data
-&#8594; Causes additional delays</p>
+<p>&#8594; Execute additional requests to load the data</p>
+</div>
+<div class="paragraph">
+<p>&#8594; Causes additional delays</p>
 </div>
 </section>
 <section>
-<h2>GraphQL - Overfetching</h2>
+<h2><span class="component">GraphQL</span> - Overfetching</h2>
 <div class="ulist">
 <ul>
 <li>
-<p>The response of the server contains more information then you need.</p>
+<p>The response of the server contains more information then you need</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>&#8594; The data superfluous data still needs to be loaded
-&#8594; Causes additional delays and load on the system</p>
+<p>&#8594; The data superfluous data still needs to be loaded</p>
+</div>
+<div class="paragraph">
+<p>&#8594; Causes additional delays and load on the system</p>
 </div>
 </section>
 <section>
-<h2>GraphQL - GraphQL-Java</h2>
+<h2><span class="component">GraphQL</span> - GraphQL-Java</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -504,22 +511,10 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphQL - Domain Model</h2>
+<h2><span class="component">GraphQL</span> - Domain Model</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Demo {
-
-	private final String name;
-	private final String id;
-
-	public Demo(String id, String name) {
-		this.id = id;
-		this.name = name;
-	}
-
-	public String getName() {
-		return name;
-public class RootElement {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class RootElement {
 
 	private final Demo demo;
 
@@ -535,7 +530,32 @@ public class RootElement {
 </div>
 </section>
 <section>
-<h2>GraphQL - Schema</h2>
+<h2><span class="component">GraphQL</span> - Domain Model</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Demo {
+
+	private final String name;
+	private final String id;
+
+	public Demo(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getId() {
+		return id;
+	}
+}</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2><span class="component">GraphQL</span> - Schema</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.graphql;
@@ -593,7 +613,7 @@ public class DemoSchema {
 </div>
 </section>
 <section>
-<h2>GraphQL - Query</h2>
+<h2><span class="component">GraphQL</span> - Query</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">		// .demo
@@ -624,7 +644,7 @@ private static GraphQLObjectType createDemoType() {
 </div>
 </section>
 <section>
-<h2>GraphQL - Examples</h2>
+<h2><span class="component">GraphQL</span> - Examples</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -637,7 +657,10 @@ private static GraphQLObjectType createDemoType() {
 </div>
 </section>
 <section>
-<h2>Elasticsearch - Intro</h2>
+<h1>Elasticsearch</h1>
+</section>
+<section>
+<h2><span class="component">Elasticsearch</span> - Intro</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -650,7 +673,7 @@ private static GraphQLObjectType createDemoType() {
 </div>
 </section>
 <section>
-<h2>Elasticsearch - Mesh</h2>
+<h2><span class="component">Elasticsearch</span> - Mesh</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -660,7 +683,7 @@ private static GraphQLObjectType createDemoType() {
 </div>
 </section>
 <section>
-<h2>Elasticsearch - Pitfalls</h2>
+<h2><span class="component">Elasticsearch</span> - Pitfalls</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -673,7 +696,7 @@ private static GraphQLObjectType createDemoType() {
 </div>
 </section>
 <section>
-<h2>Elasticsearch - Syncing</h2>
+<h2><span class="component">Elasticsearch</span> - Syncing</h2>
 <div class="paragraph">
 <p>Differential sync per index
 * Assign hashsum to each document
@@ -682,11 +705,14 @@ private static GraphQLObjectType createDemoType() {
 </div>
 </section>
 <section>
-<h2>Elasticsearch - Syncing</h2>
+<h2><span class="component">Elasticsearch</span> - Syncing</h2>
 <div class="ulist">
 <ul>
 <li>
-<p>Compare both via <code><code>com.google.common.collect.Maps#difference</code></code> (Google Guava)</p>
+<p>Compare using Google Guava:</p>
+</li>
+<li>
+<p><code>com.google.common.collect.Maps#difference</code></p>
 </li>
 </ul>
 </div>
@@ -704,7 +730,10 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphDB</h2>
+<h1>GraphDB</h1>
+</section>
+<section>
+<h2><span class="component">GraphDB</span></h2>
 <div class="ulist">
 <ul>
 <li>
@@ -717,7 +746,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphDB - Stack</h2>
+<h2><span class="component">GraphDB</span> - Stack</h2>
 <div class="imageblock">
 <div class="content">
 <img src="images/graph-stack.png" alt="graph stack">
@@ -725,7 +754,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Apache Tinkerpop</h2>
+<h2><span class="component">GraphDB</span> - Apache Tinkerpop</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -744,7 +773,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphDB - Gremlin</h2>
+<h2><span class="component">GraphDB</span> - Gremlin</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -761,7 +790,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Ferma - Intro</h2>
+<h2><span class="component">Ferma</span> - Intro</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -774,7 +803,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Ferma - Mesh Domain Model</h2>
+<h2><span class="component">Ferma</span> - Mesh Domain Model</h2>
 <div class="imageblock">
 <div class="content">
 <img src="images/domain-model.png" alt="domain model">
@@ -782,7 +811,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Ferma - Mesh Domain Model</h2>
+<h2><span class="component">Ferma</span> - Mesh Domain Model</h2>
 <div class="imageblock">
 <div class="content">
 <img src="images/domain-model-2.png" alt="domain model 2">
@@ -790,7 +819,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Ferma - Example</h2>
+<h2><span class="component">Ferma</span> - Example</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class User extends AbstractVertexFrame {
@@ -799,15 +828,15 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 		return getProperty("name");
 	}
 
-    public List&lt;? extends User&gt; getFriends() {
-    	return in(KNOWS).has(User.class).toListExplicit(User.class);
+	public List&lt;? extends User&gt; getFriends() {
+		return in(KNOWS).has(User.class).toListExplicit(User.class);
 	}
 }</code></pre>
 </div>
 </div>
 </section>
 <section>
-<h2>GraphDB - OrientDB</h2>
+<h2><span class="component">GraphDB</span> - OrientDB</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -823,17 +852,23 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>GraphDB - OrientDB - Pitfalls</h2>
+<h2><span class="component">GraphDB</span> - Pitfalls</h2>
 <div class="ulist">
 <ul>
 <li>
 <p>Running DB embedded is uncommon</p>
 </li>
+<li>
+<p>Transaction handling is still very vendor specific</p>
+</li>
 </ul>
 </div>
 </section>
 <section>
-<h2>Dagger2</h2>
+<h1>Dagger2</h1>
+</section>
+<section>
+<h2><span class="component">Dagger2</span></h2>
 <div class="ulist">
 <ul>
 <li>
@@ -846,7 +881,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Dagger2</h2>
+<h2><span class="component">Dagger2</span></h2>
 <div class="ulist">
 <ul>
 <li>
@@ -859,18 +894,10 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </section>
 <section>
-<h2>Dagger2 - Java</h2>
+<h2><span class="component">Dagger2</span> - Java #1</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.dagger2;
-
-import javax.inject.Singleton;
-
-import dagger.BindsInstance;
-import dagger.Component;
-import io.vertx.core.json.JsonObject;
-
-@Singleton
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Singleton
 @Component(modules = { AppModule.class })
 public interface AppComponent {
 
@@ -891,17 +918,10 @@ public interface AppComponent {
 </div>
 </section>
 <section>
-<h2>Dagger2 - Java</h2>
+<h2><span class="component">Dagger2</span> - Java #2</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.dagger2;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import io.vertx.core.json.JsonObject;
-
-@Singleton
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Singleton
 public class HelloService {
 
 	@Inject
@@ -920,33 +940,73 @@ public class HelloService {
 </div>
 </section>
 <section>
-<h2>Dagger2 - Java</h2>
+<h2><span class="component">Dagger2</span> - Java #3</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package com.gentics.dagger2;
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">JsonObject config = new JsonObject();
+config.put("hello", "world");
+AppComponent app = DaggerAppComponent.builder()
+	.configuration(config)
+	.build();
 
-import io.vertx.core.json.JsonObject;
-
-public class DaggerApp {
-
-	public static void main(String[] args) {
-		JsonObject config = new JsonObject();
-		config.put("hello", "world");
-		AppComponent app = DaggerAppComponent.builder().configuration(config).build();
-		System.out.println(app.hello().getResult());
-	}
-
-}</code></pre>
+System.out.println(app.hello().getResult());</code></pre>
 </div>
 </div>
 </section>
 <section>
-<h2>Dagger2 - Pitfalls</h2>
+<h2><span class="component">Dagger2</span> - Java #4</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.google.dagger&lt;/groupId&gt;
+        &lt;artifactId&gt;dagger-compiler&lt;/artifactId&gt;
+        &lt;version&gt;${dagger.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.7.0&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;verbose&gt;true&lt;/verbose&gt;
+                &lt;source&gt;8&lt;/source&gt;
+                &lt;target&gt;8&lt;/target&gt;
+                &lt;forceJavacCompilerUse&gt;true&lt;/forceJavacCompilerUse&gt;
+            &lt;/configuration&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;com.google.dagger&lt;/groupId&gt;
+                    &lt;artifactId&gt;dagger-compiler&lt;/artifactId&gt;
+                    &lt;version&gt;${dagger.version}&lt;/version&gt;
+                    &lt;optional&gt;true&lt;/optional&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2><span class="component">Dagger2</span> - Pitfalls</h2>
 <div class="ulist">
 <ul>
 <li>
 <p>IDE integration can be tricky</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dagger-eclipse-ide.png" alt="dagger eclipse ide">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Dagger code often needs to be fully regenerated</p>
 </li>
@@ -955,15 +1015,14 @@ public class DaggerApp {
 </section>
 <section>
 <h2>Thank you</h2>
-<div class="ulist">
-<ul>
-<li>
-<p>GithHub: <a href="https://github.com/gentics/mesh" class="bare">https://github.com/gentics/mesh</a></p>
-</li>
-<li>
-<p>Slides: <a href="https://jotschi.github.io/mesh-tech-stack-workshop/docs/" class="bare">https://jotschi.github.io/mesh-tech-stack-workshop/docs/</a></p>
-</li>
-</ul>
+</br></br>
+<h3>Examples on Github</h3>
+<div class="paragraph">
+<p><a href="https://github.com/jotschi/mesh-tech-stack-workshop" class="bare">https://github.com/jotschi/mesh-tech-stack-workshop</a></p>
+</div>
+<h3>Slides</h3>
+<div class="paragraph">
+<p><a href="https://jotschi.github.io/mesh-tech-stack-workshop/docs/" class="bare">https://jotschi.github.io/mesh-tech-stack-workshop/docs/</a></p>
 </div>
 </section>
 	</div>

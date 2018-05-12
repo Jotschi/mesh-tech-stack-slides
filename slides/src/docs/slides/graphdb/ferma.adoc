@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Ferma - Intro</h2>
+<h2><span class="component">Ferma</span> - Intro</h2>
 ++++
 
 * Object Graph Mapper library (OGM)

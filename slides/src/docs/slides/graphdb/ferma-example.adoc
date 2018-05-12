@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Ferma - Example</h2>
+<h2><span class="component">Ferma</span> - Example</h2>
 ++++
 
 [source,java]
@@ -11,8 +11,8 @@ public class User extends AbstractVertexFrame {
 		return getProperty("name");
 	}
 
-    public List<? extends User> getFriends() {
-    	return in(KNOWS).has(User.class).toListExplicit(User.class);
+	public List<? extends User> getFriends() {
+		return in(KNOWS).has(User.class).toListExplicit(User.class);
 	}
 }
 ----

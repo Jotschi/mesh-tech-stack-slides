@@ -1,9 +1,11 @@
 ++++
 <section>
-<h2>Elasticsearch - Syncing</h2>
+<h2><span class="component">Elasticsearch</span> - Syncing</h2>
 ++++
 
-* Compare both via ```com.google.common.collect.Maps#difference``` (Google Guava)
+* Compare using Google Guava:
+
+* `com.google.common.collect.Maps#difference`
 
 [source,java]
 ----

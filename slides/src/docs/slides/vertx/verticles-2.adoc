@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Eclipse Vert.x - Verticles</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Verticles</h2>
 ++++
 
 [source,java,indent=0]

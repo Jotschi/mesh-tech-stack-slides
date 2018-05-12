@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - Choice</h2>
+<h2><span class="component">GraphQL</span> - Choice</h2>
 ++++
 
 Solves two major problems

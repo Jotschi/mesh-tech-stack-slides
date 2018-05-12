@@ -1,0 +1,12 @@
+++++
+<section>
+<h2><span class="component">GraphDB</span> - Pitfalls</h2>
+++++
+
+* Running DB embedded is uncommon
+* Transaction handling is still very vendor specific
+
+++++
+</section>
+++++
+

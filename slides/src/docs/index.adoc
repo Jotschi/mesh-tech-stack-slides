@@ -5,23 +5,19 @@
 ++++
 
 // Intro
-
 include::slides/intro.adoc[]
 include::slides/intro2.adoc[]
 
 // Headless CMS
-
 include::slides/headlesscms/intro.adoc[]
 include::slides/headlesscms/requirements.adoc[]
 
 // Stack
-
 include::slides/stack/chapter.adoc[]
 include::slides/stack/stack-requirements.adoc[]
 include::slides/stack/stack.adoc[]
 
 // Vert.x
-
 include::slides/vertx/chapter.adoc[]
 include::slides/vertx/intro.adoc[]
 include::slides/vertx/web.adoc[]
@@ -33,13 +29,12 @@ include::slides/vertx/pitfall-threads.adoc[]
 include::slides/vertx/pitfall-eventbus.adoc[]
 
 // RxJava2
-
+include::slides/rxjava2/chapter.adoc[]
 include::slides/rxjava2/intro.adoc[]
 include::slides/rxjava2/problem.adoc[]
 include::slides/rxjava2/vertx.adoc[]
 
 // GraphQL
-
 include::slides/graphql/chapter.adoc[]
 
 include::slides/graphql/choice.adoc[]
@@ -55,13 +50,14 @@ include::slides/graphql/overfetching.adoc[]
 
 include::slides/graphql/java-intro.adoc[]
 include::slides/graphql/java-domain.adoc[]
+include::slides/graphql/java-domain-1.adoc[]
 include::slides/graphql/java-schema.adoc[]
 include::slides/graphql/java-query.adoc[]
 
 include::slides/graphql/further-examples.adoc[]
 
 // Elasticsearch
-
+include::slides/elasticsearch/chapter.adoc[]
 include::slides/elasticsearch/intro.adoc[]
 include::slides/elasticsearch/mesh.adoc[]
 include::slides/elasticsearch/pitfalls.adoc[]
@@ -69,28 +65,26 @@ include::slides/elasticsearch/sync-diff-1.adoc[]
 include::slides/elasticsearch/sync-diff-2.adoc[]
 
 // GraphDB
-
+include::slides/graphdb/chapter.adoc[]
 include::slides/graphdb/choice.adoc[]
 include::slides/graphdb/overview.adoc[]
 
 // GraphDB - Tinkerpop
-
 include::slides/graphdb/tinkerpop.adoc[]
 include::slides/graphdb/gremlin.adoc[]
 
 // GraphDB - Ferma
-
 include::slides/graphdb/ferma.adoc[]
 include::slides/graphdb/ferma-model-1.adoc[]
 include::slides/graphdb/ferma-model-2.adoc[]
 include::slides/graphdb/ferma-example.adoc[]
 
 // GraphDB - OrientDB
-
 include::slides/graphdb/orientdb-intro.adoc[]
-include::slides/graphdb/orientdb-pitfalls.adoc[]
+include::slides/graphdb/pitfalls.adoc[]
 
 // Dagger2
+include::slides/dagger2/chapter.adoc[]
 
 include::slides/dagger2/intro.adoc[]
 include::slides/dagger2/choice.adoc[]
@@ -98,6 +92,7 @@ include::slides/dagger2/choice.adoc[]
 include::slides/dagger2/java-example.adoc[]
 include::slides/dagger2/java-example2.adoc[]
 include::slides/dagger2/java-example3.adoc[]
+include::slides/dagger2/java-example-maven.adoc[]
 
 include::slides/dagger2/pitfalls.adoc[]
 

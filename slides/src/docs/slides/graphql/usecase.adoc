@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - Usecase</h2>
+<h2><span class="component">GraphQL</span> - Usecase</h2>
 ++++
 
 

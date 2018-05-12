@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphDB - Stack</h2>
+<h2><span class="component">GraphDB</span> - Stack</h2>
 ++++
 
 image::graph-stack.png[]

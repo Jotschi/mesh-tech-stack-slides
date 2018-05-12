@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - Examples</h2>
+<h2><span class="component">GraphQL</span> - Examples</h2>
 ++++
 
 * https://github.com/Jotschi/vertx-graphql-example

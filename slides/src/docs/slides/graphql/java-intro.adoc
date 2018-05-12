@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphQL - GraphQL-Java</h2>
+<h2><span class="component">GraphQL</span> - GraphQL-Java</h2>
 ++++
 
 * Java API to create GraphQL schema

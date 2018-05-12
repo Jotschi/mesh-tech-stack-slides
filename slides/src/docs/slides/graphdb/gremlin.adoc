@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>GraphDB - Gremlin</h2>
+<h2><span class="component">GraphDB</span> - Gremlin</h2>
 ++++
 
 * Way to traverse a graph

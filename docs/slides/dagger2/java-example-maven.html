@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2><span class="component">Dagger2</span> - Java #4</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.google.dagger&lt;/groupId&gt;
+        &lt;artifactId&gt;dagger-compiler&lt;/artifactId&gt;
+        &lt;version&gt;${dagger.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.7.0&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;verbose&gt;true&lt;/verbose&gt;
+                &lt;source&gt;8&lt;/source&gt;
+                &lt;target&gt;8&lt;/target&gt;
+                &lt;forceJavacCompilerUse&gt;true&lt;/forceJavacCompilerUse&gt;
+            &lt;/configuration&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;com.google.dagger&lt;/groupId&gt;
+                    &lt;artifactId&gt;dagger-compiler&lt;/artifactId&gt;
+                    &lt;version&gt;${dagger.version}&lt;/version&gt;
+                    &lt;optional&gt;true&lt;/optional&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+			center: false,
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>
