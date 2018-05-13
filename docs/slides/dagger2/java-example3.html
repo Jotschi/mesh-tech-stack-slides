@@ -10,6 +10,13 @@
 <div class="sectionbody">
 <section>
 <h2><span class="component">Dagger2</span> - Java #3</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>AppComponent &#8594; DaggerAppComponent (generated)</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">JsonObject config = new JsonObject();
@@ -21,6 +28,9 @@ AppComponent app = DaggerAppComponent.builder()
 System.out.println(app.hello().getResult());</code></pre>
 </div>
 </div>
+    <aside class="notes">
+      * Dagger generates component factory for each found component class
+    </aside>
 </section>
 </div>
 </div>
@@ -31,6 +41,7 @@ System.out.println(app.hello().getResult());</code></pre>
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

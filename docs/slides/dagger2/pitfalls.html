@@ -25,10 +25,26 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Dagger code often needs to be fully regenerated</p>
+<p>Code regeneration</p>
+</li>
+<li>
+<p>Source of dagger DI issues sometimes hard to trace</p>
+</li>
+<li>
+<p>DI tree isolated</p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">AppComponent app = DaggerAppComponent.builder()
+	.configuration(config)
+	.build();</code></pre>
+</div>
+</div>
+	<aside class="notes">
+        * Dagger code often needs to be fully regenerated
+    </aside>
 </section>
 </div>
 </div>
@@ -39,6 +55,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

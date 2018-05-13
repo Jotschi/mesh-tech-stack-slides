@@ -3,11 +3,17 @@
 <h2><span class="component">Dagger2</span> - Java #1</h2>
 ++++
 
+The component describes the root of the dependency tree
+
 [source,java,indent=0]
 ----
 include::../../../../../dagger2/src/main/java/com/gentics/dagger2/AppComponent.java[lines=9..25]
 ----
 
 ++++
+    <aside class="notes">
+      * Starting point for dagger
+      * Builder used to inject already existing dependencies into dagger
+    </aside>
 </section>
 ++++

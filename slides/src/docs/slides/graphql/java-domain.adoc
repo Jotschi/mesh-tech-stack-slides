@@ -3,6 +3,8 @@
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
 ++++
 
+RootElement references Demo
+
 [source,java,indent=0]
 ----
 include::../../../../../graphql/src/main/java/com/gentics/graphql/domain/RootElement.java[lines=6..23]

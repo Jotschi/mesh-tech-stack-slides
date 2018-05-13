@@ -25,7 +25,8 @@
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Map&lt;String, String&gt; sourceVersions = loadVersionsFromGraph();
 
 Map&lt;String, String&gt; sinkVersions = loadVersionsFromIndex(indexName);
-MapDifference&lt;String, String&gt; diff = Maps.difference(sourceVersions, sinkVersions);
+MapDifference&lt;String, String&gt; diff = Maps.difference(sourceVersions,
+                                       sinkVersions);
 
 Set&lt;String&gt; needInsertionInES = diff.entriesOnlyOnLeft().keySet();
 Set&lt;String&gt; needRemovalInES = diff.entriesOnlyOnRight().keySet();
@@ -42,6 +43,7 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

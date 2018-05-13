@@ -1,8 +1,5 @@
 ++++
 <section>
 <h1>Elasticsearch</h1>
-++++
-
-++++
 </section>
 ++++

@@ -3,11 +3,10 @@
 <h2><span class="component">GraphQL</span> - Underfetching</h2>
 ++++
 
-* The response of the server is lacking information you need
+The response of the server is lacking information you need
 
--> Execute additional requests to load the data
-
--> Causes additional delays
+* -> Execute additional requests to load the data
+* -> Causes additional delays
 
 ++++
 </section>

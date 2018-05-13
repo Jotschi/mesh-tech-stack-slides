@@ -4,7 +4,7 @@
 ++++
 
 * Java API to create GraphQL schema
-* Github: https://github.com/graphql-java/graphql-java
+* Github: github.com/graphql-java/graphql-java
 
 [source,xml]
 ----

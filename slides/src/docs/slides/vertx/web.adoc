@@ -3,11 +3,20 @@
 <h2><span class="component">Eclipse Vert.x</span> - Web</h2>
 ++++
 
+* HTTP routing
+* Session, Cookie, Upload handling
+* Websockets
+* Authentication handlers
+
 [source,java,indent=0]
 ----
-include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxWebExample.java[lines=8..21]
+include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxWebExample.java[lines=10..20]
 ----
 
 ++++
+    <aside class="notes">
+        * Similar to express
+        * Routing requests
+    </aside>
 </section>
 ++++

@@ -3,11 +3,12 @@
 <h2><span class="component">Eclipse Vert.x</span> - Intro</span></h2>
 ++++
 
+http://vertx.io
+
 * Swiss army knife for HTTP
 * Reactive Framework
-* ASync API
-
-* https://github.com/vert-x3/vertx-guide-for-java-devs
+* Async API
+* Modular / General purpose
 
 ++++
 </section>

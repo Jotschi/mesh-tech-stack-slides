@@ -17,7 +17,8 @@ public class VertxVerticleExample {
 
 class TestVerticle extends AbstractVerticle {
 
-	private static final Logger log = LoggerFactory.getLogger(TestVerticle.class);
+	private static final Logger log = LoggerFactory
+		.getLogger(TestVerticle.class);
 
 	@Override
 	public void start(Future<Void> startFuture) throws Exception {

@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #1</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #2</h2>
 ++++
 
 [source,java,indent=0]
@@ -10,11 +10,14 @@ include::../../../../../vertx/src/test/java/com/gentics/vertx/VertxPitfallTest.j
 
 
 ++++
-<p class="fragment">
-<img src="images/vertx-eventbus-bomb.png" alt="vertx thread bomb">
-</p>
+<span class="fragment">
+    <img src="images/vertx-eventbus-bomb.png" alt="vertx eventbus bomb">
+</span>
 ++++
 
 ++++
+    <aside class="notes">
+        * Eventbus loops can cause problems
+    </aside>
 </section>
 ++++

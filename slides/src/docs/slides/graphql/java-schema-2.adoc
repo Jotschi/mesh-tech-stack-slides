@@ -1,0 +1,13 @@
+++++
+<section>
+<h2><span class="component">GraphQL</span> - Schema #2</h2>
+++++
+
+[source,java,indent=0]
+----
+include::../../../../../graphql/src/main/java/com/gentics/graphql/DemoSchema.java[lines=15..27]
+----
+
+++++
+</section>
+++++

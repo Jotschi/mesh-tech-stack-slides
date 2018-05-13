@@ -14,7 +14,8 @@
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">class TestVerticle extends AbstractVerticle {
 
-	private static final Logger log = LoggerFactory.getLogger(TestVerticle.class);
+	private static final Logger log = LoggerFactory
+		.getLogger(TestVerticle.class);
 
 	@Override
 	public void start(Future&lt;Void&gt; startFuture) throws Exception {
@@ -26,8 +27,7 @@
 	public void stop(Future&lt;Void&gt; stopFuture) throws Exception {
 		log.info("Stopped");
 		stopFuture.complete();
-	}
-}</code></pre>
+	}</code></pre>
 </div>
 </div>
 </section>
@@ -40,6 +40,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

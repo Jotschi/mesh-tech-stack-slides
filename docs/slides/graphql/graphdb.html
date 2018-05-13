@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2><span class="component">GraphQL</span> - GraphDB Traversal</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Root element is starting point of query</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">RootElement root = …
+new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data fetchers can load directly referenced data</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">…
+.dataFetcher((env) -&gt; {
+    RootElement root = env.getSource();
+    return root.getDemo();
+}))
+…</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GraphQL thus directly traversals the GraphDB via data fetchers</p>
+</li>
+<li>
+<p>Highly efficient</p>
+</li>
+<li>
+<p>Convenient for profiling</p>
+</li>
+</ul>
+</div>
+    <aside class="notes">
+        * Elements which were visited in the transaction will be cached
+        * GraphDB domain model can be mapped to GraphQL schemas
+    </aside>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+			center: false,
+			transition: "none",
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

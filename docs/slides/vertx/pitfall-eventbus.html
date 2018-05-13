@@ -9,7 +9,7 @@
 		<div id="preamble">
 <div class="sectionbody">
 <section>
-<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #1</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #2</h2>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">final String ADDR = "dummy";
@@ -24,9 +24,12 @@ bus.consumer(ADDR, rh -&gt; {
 bus.publish(ADDR, "hello-world");</code></pre>
 </div>
 </div>
-<p class="fragment">
-<img src="images/vertx-eventbus-bomb.png" alt="vertx thread bomb">
-</p>
+<span class="fragment">
+    <img src="images/vertx-eventbus-bomb.png" alt="vertx eventbus bomb">
+</span>
+    <aside class="notes">
+        * Eventbus loops can cause problems
+    </aside>
 </section>
 </div>
 </div>
@@ -37,6 +40,7 @@ bus.publish(ADDR, "hello-world");</code></pre>
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

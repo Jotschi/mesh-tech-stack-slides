@@ -3,6 +3,8 @@
 <h2><span class="component">RxJava2</span></h2>
 ++++
 
+https://github.com/ReactiveX/RxJava
+
 * Reactive Extensions for the JVM
 
 ++++

@@ -6,5 +6,7 @@
 image::domain-model-2.png[]
 
 ++++
+    <aside class="notes">
+    </aside>
 </section>
 ++++

@@ -1,8 +1,5 @@
 ++++
 <section>
-<h1>Dagger2</h1>
-++++
-
-++++
+<h1>Dagger2 - Dependency Injection</h1>
 </section>
 ++++

@@ -13,13 +13,18 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Switched from Spring DI to Dagger 2</p>
+<p>Spring DI vs. Dagger 2</p>
 </li>
 <li>
 <p>Reduced startup time since no complex component-scanning is involved</p>
 </li>
 </ul>
 </div>
+    <aside class="notes">
+      * Less dependencies
+      * Spring DI classpath scanning was very costly
+      * Downside: No more dynamic DI injection (-> Plugin System)
+    </aside>
 </section>
 </div>
 </div>
@@ -30,6 +35,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2><span class="component">Dagger2</span> - Dependency Injection</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Loosely coupled implementations</p>
+</li>
+<li>
+<p>Provide dependencies in your code</p>
+</li>
+<li>
+<p>Manage dependency hierarchies</p>
+</li>
+</ul>
+</div>
+	<aside class="notes">
+		* Bindings -> Swap Implementation -> Elasticsearch Provider
+		* Easier for testing
+	</aside>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+			center: false,
+			transition: "none",
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

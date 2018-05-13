@@ -1,8 +1,5 @@
 ++++
 <section>
 <h1>Eclipse Vert.x</h1>
-++++
-
-++++
 </section>
 ++++

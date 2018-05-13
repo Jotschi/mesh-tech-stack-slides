@@ -1,0 +1,13 @@
+++++
+<section>
+<h2><span class="component">GraphQL</span> - Profiling</h2>
+++++
+
+* CPU profiling very convenient
+* JProfiler example
+
+image::graphql-profiling.png[]
+
+++++
+</section>
+++++

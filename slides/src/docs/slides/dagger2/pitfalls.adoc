@@ -7,10 +7,21 @@
 
 image::dagger-eclipse-ide.png[]
 
+* Code regeneration
+* Source of dagger DI issues sometimes hard to trace
+* DI tree isolated
 
-* Dagger code often needs to be fully regenerated
+[source,java,indent=0]
+----
+	AppComponent app = DaggerAppComponent.builder()
+		.configuration(config)
+		.build();
+----
 
 ++++
+	<aside class="notes">
+        * Dagger code often needs to be fully regenerated
+    </aside>
 </section>
 ++++
 

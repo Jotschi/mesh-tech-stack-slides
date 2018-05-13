@@ -1,9 +1,0 @@
-++++
-<section>
-<h2><span class="component">GraphQL</span> - Usecase</h2>
-++++
-
-
-++++
-</section>
-++++

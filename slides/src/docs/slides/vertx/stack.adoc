@@ -4,7 +4,13 @@
 ++++
 
 * Event Bus
+* Clustering support
+* JWT, OAuth support
+* Reactive Reddis, MongoDB, MySQL clients
 
 ++++
+    <aside class="notes">
+        * Growing ecosystem
+    </aside>
 </section>
 ++++

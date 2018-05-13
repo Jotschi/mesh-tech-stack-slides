@@ -8,5 +8,8 @@
 image::graphiql.png[]
 
 ++++
+    <aside class="notes">
+        * Convenient way to explore GraphQL schema
+    </aside>
 </section>
 ++++

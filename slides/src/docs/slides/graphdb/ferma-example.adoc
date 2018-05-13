@@ -18,5 +18,8 @@ public class User extends AbstractVertexFrame {
 ----
 
 ++++
+    <aside class="notes">
+		
+    </aside>
 </section>
 ++++

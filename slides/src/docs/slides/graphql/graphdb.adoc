@@ -1,0 +1,36 @@
+++++
+<section>
+<h2><span class="component">GraphQL</span> - GraphDB Traversal</h2>
+++++
+
+* Root element is starting point of query
+
+[source,java]
+----
+RootElement root = …
+new ExecutionInput(query, null, queryJson, rootElement, null);
+----
+
+* Data fetchers can load directly referenced data
+
+[source,java]
+----
+…
+.dataFetcher((env) -> {
+    RootElement root = env.getSource();
+    return root.getDemo();
+}))
+…
+----
+
+* GraphQL thus directly traversals the GraphDB via data fetchers
+* Highly efficient
+* Convenient for profiling
+
+++++
+    <aside class="notes">
+        * Elements which were visited in the transaction will be cached
+        * GraphDB domain model can be mapped to GraphQL schemas
+    </aside>
+</section>
+++++

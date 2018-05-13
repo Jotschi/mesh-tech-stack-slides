@@ -17,9 +17,13 @@
 }</code></pre>
 </div>
 </div>
-<p class="fragment">
-<img src="images/vertx-thread-bomb.png" alt="vertx thread bomb">
-</p>
+<span class="fragment">
+  <img src="images/vertx-thread-bomb.png" alt="vertx thread bomb">
+  <p>Each Vert.x instance creates its own threadpool</p>
+</span>
+    <aside class="notes">
+		* Each Vert.x instance creates eventloop, worker thread pool
+    </aside>
 </section>
 </div>
 </div>
@@ -30,6 +34,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

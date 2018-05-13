@@ -12,7 +12,8 @@
 Map<String, String> sourceVersions = loadVersionsFromGraph();
 
 Map<String, String> sinkVersions = loadVersionsFromIndex(indexName);
-MapDifference<String, String> diff = Maps.difference(sourceVersions, sinkVersions);
+MapDifference<String, String> diff = Maps.difference(sourceVersions,
+                                       sinkVersions);
 
 Set<String> needInsertionInES = diff.entriesOnlyOnLeft().keySet();
 Set<String> needRemovalInES = diff.entriesOnlyOnRight().keySet();

@@ -1,0 +1,18 @@
+++++
+<section>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #3</h2>
+++++
+
+Full example on GitHub:
+
+https://github.com/Jotschi/vertx-router-example
+
+* `RouterStorage` class used to collectively manage routes
+
+++++
+    <aside class="notes">
+    </aside>
+</section>
+++++
+
+

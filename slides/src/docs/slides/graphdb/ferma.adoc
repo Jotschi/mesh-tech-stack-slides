@@ -3,9 +3,15 @@
 <h2><span class="component">Ferma</span> - Intro</h2>
 ++++
 
+https://github.com/Syncleus/Ferma
+
 * Object Graph Mapper library (OGM)
 * Provides Java API to model your Graph Domain using classes
 
 ++++
+    <aside class="notes">
+        * Maps vertices and edges to Java objects
+        * Essentially wraps Tinkerpop elements with custom high level classes
+    </aside>
 </section>
 ++++

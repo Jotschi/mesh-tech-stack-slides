@@ -1,8 +1,5 @@
 ++++
 <section>
 <h1>GraphQL</h1>
-++++
-
-++++
 </section>
 ++++

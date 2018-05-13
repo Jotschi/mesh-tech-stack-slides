@@ -10,6 +10,28 @@
 <div class="sectionbody">
 <section>
 <h2><span class="component">Eclipse Vert.x</span> - Routing</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Sub-routers to modularize and re-use routes</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Router router = Router.router(vertx);
+
+Router subRouter = Router.router(vertx);
+router.mountSubRouter("/test/", subRouter);
+
+subRouter.route("/hello").handler(rc -&gt; {
+	rc.response().end("World");
+});</code></pre>
+</div>
+</div>
+    <aside class="notes">
+     * subrouters great to modularize and reuse routes
+    </aside>
 </section>
 </div>
 </div>
@@ -20,6 +42,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

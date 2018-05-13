@@ -64,6 +64,7 @@ body {
 
 .reveal h1 {
   font-size: 2.5em;
+  padding-top: 25%;
   color: #0096dc;
 }
 
@@ -83,7 +84,7 @@ body {
  * OTHER
  *********************************************/
 .reveal p {
-  margin: 20px 0;
+  margin: 5px 0;
   line-height: 1.3; }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -151,6 +152,7 @@ body {
 
 .reveal pre {
   display: block;
+  background-color: #313131;
   position: relative;
   width: 90%;
   margin: 20px auto;
@@ -163,6 +165,7 @@ body {
 
 .reveal code {
   font-family: monospace;
+  color: #ffcc66;
   text-transform: none; }
 
 .reveal pre code {

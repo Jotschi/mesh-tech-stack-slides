@@ -1,0 +1,13 @@
+
+++++
+<section>
+<h2><span class="component">Eclipse Vert.x</span> - Further Information</span></h2>
+++++
+
+* https://github.com/vert-x3/vertx-guide-for-java-devs
+* https://github.com/vert-x3/vertx-awesome
+
+++++
+</section>
+++++
+

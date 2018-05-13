@@ -7,6 +7,12 @@
 * https://github.com/graphql-java/graphql-java/blob/master/src/test/groovy/graphql/GarfieldSchema.java
 
 ++++
+    <aside class="notes">
+        * Example shows argument handling
+        * Integration with OrientDB
+        * Integration with Vert.x
+        * Error handling
+    </aside>
 </section>
 ++++
 

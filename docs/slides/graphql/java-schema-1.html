@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<title>Gentics Mesh Workshop</title>
+	</head>
+	<body>
+		<div id="preamble">
+<div class="sectionbody">
+<section>
+<h2><span class="component">GraphQL</span> - Schema #1</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static GraphQLSchema createSchema() {
+	return GraphQLSchema.newSchema()
+		.query(createQueryType())
+		.build();
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createDemoType() {
+	return newObject().name("Demo")
+		.description("A demo element")
+
+		// .id
+		.field(newFieldDefinition().name("id")
+			.description("The id of the character.")
+			.type(new GraphQLNonNull(GraphQLString)))
+
+		// .name
+		.field(newFieldDefinition().name("name")
+			.description("The name of the element.")
+			.type(GraphQLString))
+
+		.build();
+}</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script>
+			Reveal.initialize({
+			center: false,
+			transition: "none",
+			dependencies: [
+				// Speaker notes
+				{ src: 'js/plugin/notes/notes.js', async: true }
+			]
+			
+			});
+
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>

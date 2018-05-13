@@ -1,0 +1,17 @@
+++++
+<section>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #3</h2>
+++++
+
+* Routes are setup once and shared for all verticles
+
+image::vertx-rest-setup-wrong-cross.png[]
+
+++++
+    <aside class="notes">
+        * Each verticle has its own eventloop
+        * Thus handlers may be invoked concurrently
+        * Shared classes/handlers may not be threadsafe
+    </aside>
+</section>
+++++

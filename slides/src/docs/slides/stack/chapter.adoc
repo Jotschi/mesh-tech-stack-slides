@@ -1,8 +1,5 @@
 ++++
 <section>
-<h1>Gentics Mesh Stack</h1>
-++++
-
-++++
+<h1>Gentics Mesh Technology Stack</h1>
 </section>
 ++++

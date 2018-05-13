@@ -3,10 +3,16 @@
 <h2><span class="component">GraphQL</span> - Intro</h2>
 ++++
 
-
-
-
+* Query language used to query nested data structures
+* First released 2015
+* Developed by Facebook
+* Alternative to REST
 
 ++++
+    <aside class="notes">
+        * Describe data domain via schema
+        * Use query to ask for data
+        * Get data which matches the query
+    </aside>
 </section>
 ++++

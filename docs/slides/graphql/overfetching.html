@@ -10,18 +10,18 @@
 <div class="sectionbody">
 <section>
 <h2><span class="component">GraphQL</span> - Overfetching</h2>
+<div class="paragraph">
+<p>The response of the server contains more information then you need</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The response of the server contains more information then you need</p>
+<p>&#8594; The data superfluous data still needs to be loaded</p>
+</li>
+<li>
+<p>&#8594; Causes additional delays and load on the system</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>&#8594; The data superfluous data still needs to be loaded</p>
-</div>
-<div class="paragraph">
-<p>&#8594; Causes additional delays and load on the system</p>
 </div>
 </section>
 </div>
@@ -33,6 +33,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }

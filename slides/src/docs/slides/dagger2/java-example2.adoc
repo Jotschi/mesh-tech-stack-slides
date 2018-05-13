@@ -9,5 +9,9 @@ include::../../../../../dagger2/src/main/java/com/gentics/dagger2/HelloService.j
 ----
 
 ++++
+    <aside class="notes">
+      * Service is injectable
+      * Service has dependencies
+    </aside>
 </section>
 ++++

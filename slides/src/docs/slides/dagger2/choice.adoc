@@ -3,9 +3,14 @@
 <h2><span class="component">Dagger2</span></h2>
 ++++
 
-* Switched from Spring DI to Dagger 2
+* Spring DI vs. Dagger 2
 * Reduced startup time since no complex component-scanning is involved
 
 ++++
+    <aside class="notes">
+      * Less dependencies
+      * Spring DI classpath scanning was very costly
+      * Downside: No more dynamic DI injection (-> Plugin System)
+    </aside>
 </section>
 ++++

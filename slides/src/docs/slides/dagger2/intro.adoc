@@ -3,9 +3,15 @@
 <h2><span class="component">Dagger2</span></h2>
 ++++
 
+https://google.github.io/dagger/
+
 * Dagger is a fully static, compile-time dependency injection framework for both Java.
-* Now maintained by Google
+* Now maintained by Google (previously Square)
 
 ++++
+	<aside class="notes">
+      * DI code gets generated
+      * DI issues are revealed during compile time
+    </aside>
 </section>
 ++++

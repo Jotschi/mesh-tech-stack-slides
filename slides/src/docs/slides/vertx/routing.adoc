@@ -3,6 +3,16 @@
 <h2><span class="component">Eclipse Vert.x</span> - Routing</h2>
 ++++
 
+* Sub-routers to modularize and re-use routes
+
+[source,java,indent=0]
+----
+include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxRoutingExample.java[lines=18..25]
+----
+
 ++++
+    <aside class="notes">
+     * subrouters great to modularize and reuse routes
+    </aside>
 </section>
 ++++

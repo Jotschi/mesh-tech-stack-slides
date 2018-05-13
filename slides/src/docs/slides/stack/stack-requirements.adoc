@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2>Technology Stack - Requirements</h2>
+<h2><span class="component">Technology Stack</span> - Requirements</h2>
 ++++
 
 * Lightweight and modern web framework

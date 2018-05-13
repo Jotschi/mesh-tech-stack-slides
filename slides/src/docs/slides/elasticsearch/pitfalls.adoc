@@ -5,5 +5,9 @@
 * Dynamic mapping can cause issues when input data is dynamic
 * Index types are gradually being deprecated
 ++++
+    <aside class="notes">
+        * Document property switches from string to number
+        * Dynamic mappings on by-default
+    </aside>
 </section>
 ++++

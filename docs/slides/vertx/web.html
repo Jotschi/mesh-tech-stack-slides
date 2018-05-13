@@ -10,24 +10,41 @@
 <div class="sectionbody">
 <section>
 <h2><span class="component">Eclipse Vert.x</span> - Web</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>HTTP routing</p>
+</li>
+<li>
+<p>Session, Cookie, Upload handling</p>
+</li>
+<li>
+<p>Websockets</p>
+</li>
+<li>
+<p>Authentication handlers</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Vertx vertx = Vertx.vertx();
 
-	Vertx vertx = Vertx.vertx();
+Router router = Router.router(vertx);
 
-	Router router = Router.router(vertx);
+router.route("/hello").handler(rc -&gt; {
+	rc.response().end("World");
+});
 
-	router.route("/hello").handler(rc -&gt; {
-		rc.response().end("World");
-	});
-
-	vertx.createHttpServer()
-		.requestHandler(router::accept)
-		.listen(8080);
-}</code></pre>
+vertx.createHttpServer()
+	.requestHandler(router::accept)
+	.listen(8080);</code></pre>
 </div>
 </div>
+    <aside class="notes">
+        * Similar to express
+        * Routing requests
+    </aside>
 </section>
 </div>
 </div>
@@ -38,6 +55,7 @@
 		<script>
 			Reveal.initialize({
 			center: false,
+			transition: "none",
 			dependencies: [
 				// Speaker notes
 				{ src: 'js/plugin/notes/notes.js', async: true }
