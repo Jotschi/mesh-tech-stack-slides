@@ -2,7 +2,9 @@
 <section>
 <h2><span class="component">Elasticsearch</span> - Mesh</h2>
 ++++
-* **Store** mesh elements in indices (Users, Nodes, Groups)
+
+* **Store** Gentics Mesh elements in indices (Users, Nodes, Groups)
+
 ++++
 </section>
 ++++

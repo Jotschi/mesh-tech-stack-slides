@@ -5,7 +5,7 @@
 
 The response of the server contains more information then you need
 
-* -> The data superfluous data still needs to be loaded
+* -> Superfluous data still needs to be loaded to complete the request
 * -> Causes additional delays and load on the system
 
 ++++
