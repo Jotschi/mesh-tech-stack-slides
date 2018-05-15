@@ -22,7 +22,12 @@ Vertx vertx = Vertx.vertx();
 ----
 
 
-
 ++++
+<aside class="notes">
+    <ul>
+        <li>Wrapper for RxJava2</li>
+        <li>Wrapper for Filesystem, Request handling, Eventbus</li>
+    </ul>
+</aside>
 </section>
 ++++

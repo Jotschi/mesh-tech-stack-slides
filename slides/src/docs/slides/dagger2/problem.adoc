@@ -9,8 +9,10 @@
 
 ++++
 	<aside class="notes">
-		* Bindings -> Swap Implementation -> Elasticsearch Provider
-		* Easier for testing
+		<ul>
+			<li>Bindings -> Swap Implementation -> Elasticsearch Provider</li>
+			<li>Easier for testing</li>
+		</ul>
 	</aside>
 </section>
 ++++

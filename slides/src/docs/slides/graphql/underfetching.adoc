@@ -9,5 +9,10 @@ The response of the server is lacking information you need
 * -> Causes additional delays
 
 ++++
+<aside class="notes">
+    <ul>
+        <li>Results in additional latency</li>
+    </ul>
+</aside>
 </section>
 ++++

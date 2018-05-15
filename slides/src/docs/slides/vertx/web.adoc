@@ -15,8 +15,10 @@ include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxWebExample.ja
 
 ++++
     <aside class="notes">
-        * Similar to express
-        * Routing requests
+        <ul>
+            <li>Similar to express</li>
+            <li>Routing requests</li>
+        </ul>
     </aside>
 </section>
 ++++

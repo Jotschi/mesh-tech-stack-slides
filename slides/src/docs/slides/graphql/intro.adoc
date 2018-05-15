@@ -10,9 +10,11 @@
 
 ++++
     <aside class="notes">
-        * Describe data domain via schema
-        * Use query to ask for data
-        * Get data which matches the query
+        <ul>
+            <li>Describe data domain via schema</li>
+            <li>Use query to ask for data</li>
+            <li>Get data which matches the query</li>
+        </ul>
     </aside>
 </section>
 ++++

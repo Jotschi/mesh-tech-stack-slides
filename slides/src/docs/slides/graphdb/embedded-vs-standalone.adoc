@@ -13,7 +13,9 @@ Con:
 
 ++++
 	<aside class="notes">
-        * Explain that OrientDB for example does not support multithreaded transactions
+        <ul>
+            <li>Explain that OrientDB for example does not support multithreaded transactions</li>
+        </ul>
     </aside>
 </section>
 ++++

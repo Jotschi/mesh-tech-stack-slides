@@ -21,10 +21,13 @@
 ----
 
 ++++
-    <aside class="notes">
-      * Typical Gentics Mesh query
-      * We query for weight, price, slug and description
-      * Union types can be used to handle dynamic results
-    </aside>
+<aside class="notes">
+  <ul>
+    <li>A webserver can accept the query via HTTP</li>
+    <li>Typical Gentics Mesh query</li>
+    <li>We query: <strong>weight</strong>, <strong>price</strong>, <strong>slug</strong>, <strong>description</strong></li>
+    <li>Union types -> Dynamic types ->  can be used to handle dynamic results</li>
+  </ul>
+</aside>
 </section>
 ++++

@@ -8,7 +8,9 @@
 
 ++++
     <aside class="notes">
-        * Issues sometimes are only revealed under load
+        <ul>
+            <li>Issues sometimes are only revealed under load</li>
+        </ul>
     </aside>
 </section>
 ++++

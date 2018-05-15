@@ -4,7 +4,13 @@
 ++++
 * Java based
 * Highly scaleable
+* Based on Apache Lucene
 ++++
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 ++++
 

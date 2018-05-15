@@ -3,13 +3,15 @@
 <h2><span class="component">GraphQL</span> - GraphiQL</h2>
 ++++
 
-* demo.getmesh.io/api/v1/demo/graphql/browser
+demo.getmesh.io/api/v1/demo/graphql/browser
 
 image::graphiql.png[]
 
 ++++
-    <aside class="notes">
-        * Convenient way to explore GraphQL schema
-    </aside>
+<aside class="notes">
+    <ul>
+        <li>Convenient way to explore GraphQL schema</li>
+    </ul>
+</aside>
 </section>
 ++++

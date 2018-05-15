@@ -3,6 +3,8 @@
 <h2><span class="component">GraphDB</span> - Gremlin</h2>
 ++++
 
+image::gremlin.png[]
+
 * Way to traverse a graph
 
 [source,java]
@@ -14,8 +16,10 @@
 
 ++++
     <aside class="notes">
-      * Is part of Tinkerpop
-      * Can be directly used within Java
+      <ul>
+        <li>Is part of Tinkerpop</li>
+        <li>Can be directly used within Java</li>
+      </ul>
     </aside>
 </section>
 ++++

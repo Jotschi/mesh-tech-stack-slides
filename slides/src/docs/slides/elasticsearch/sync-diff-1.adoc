@@ -10,5 +10,10 @@ Differential sync per index
 * Collect hashsums of all elements in the index
 
 ++++
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 ++++

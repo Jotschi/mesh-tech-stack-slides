@@ -12,7 +12,9 @@ include::../../../../../dagger2/src/main/java/com/gentics/dagger2/DaggerApp.java
 
 ++++
     <aside class="notes">
-      * Dagger generates component factory for each found component class
+      <ul>
+        <li>Dagger generates component factory for each found component class</li>
+      </ul>
     </aside>
 </section>
 ++++

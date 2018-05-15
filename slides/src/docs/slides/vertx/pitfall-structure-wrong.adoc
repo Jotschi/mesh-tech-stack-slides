@@ -9,7 +9,9 @@ image::vertx-rest-setup-wrong.png[]
 
 ++++
     <aside class="notes">
-        * Multiple verticles to process request concurrently
+        <ul>
+            <li>Multiple verticles to process request concurrently</li>
+        </ul>
     </aside>
 </section>
 ++++

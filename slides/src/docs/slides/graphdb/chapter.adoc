@@ -1,5 +1,11 @@
 ++++
 <section>
 <h1>GraphDB</h1>
+  <aside class="notes">
+      <ul>
+        <li>Pause</li>
+        <li>Next: Talk about Storage Side - GraphDB</li>
+      </ul>
+    </aside>
 </section>
 ++++

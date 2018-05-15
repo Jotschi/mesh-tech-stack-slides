@@ -5,7 +5,13 @@
 
 * Caching responses is not that easy
 * Error handling done via JSON
+* Not easy to create Types/POJOs for results
 
 ++++
+  <aside class="notes">
+      <ul>
+        <li>Types are <strong>bound to the structure</strong> of the response and thus <strong>to the query</strong></li>
+      </ul>
+    </aside>
 </section>
 ++++

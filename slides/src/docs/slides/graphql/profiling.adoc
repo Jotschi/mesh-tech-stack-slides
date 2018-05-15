@@ -9,5 +9,11 @@
 image::graphql-profiling.png[]
 
 ++++
+  <aside class="notes">
+      <ul>
+        <li>Profiling very expressive</li>
+        <li>Easy to narrow down performance issues</li>
+      </ul>
+    </aside>
 </section>
 ++++

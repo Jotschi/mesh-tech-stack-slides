@@ -12,7 +12,9 @@ include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxRoutingExampl
 
 ++++
     <aside class="notes">
-     * subrouters great to modularize and reuse routes
+        <ul>
+            <li>subrouters great to modularize and reuse routes</li>
+        </ul>
     </aside>
 </section>
 ++++

@@ -24,7 +24,9 @@
 
 ++++
     <aside class="notes">
-      * Result data similar to query
+      <ul>
+        <li>Result data match up with input query</li>
+      </ul>
     </aside>
 </section>
 ++++

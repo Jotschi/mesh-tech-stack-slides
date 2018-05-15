@@ -93,10 +93,15 @@
 <li>
 <p>Contents must be searchable</p>
 </li>
+<li>
+<p>Scalability</p>
+</li>
 </ul>
 </div>
 	<aside class="notes">
-		* Compare to older stacks (e.g. Java EE?)
+		<ul>
+			<li>Compare to older stacks (e.g. Java EE?)</li>
+		</ul>
 	</aside>
 </section>
 <section>
@@ -127,13 +132,15 @@
 </ul>
 </div>
 	<aside class="notes">
-		* Vert.x for HTTP
-		* OrientDB for Storage
-		* Elasticsearch for Search
-		* Dagger2 for DI
-		* RxJava2 for Clean RX code
-		* GraphQL Java for querying data
-		* Hazelcast for Clustering
+		<ul>
+			<li>Vert.x for HTTP</li>
+			<li>OrientDB for Storage</li>
+			<li>Elasticsearch for Search</li>
+			<li>Dagger2 for DI</li>
+			<li>RxJava2 for Clean RX code</li>
+			<li>GraphQL Java for querying data</li>
+			<li>Hazelcast for Clustering</li>
+		</ul>
 	</aside>
 </section>
 <section>
@@ -195,8 +202,10 @@ vertx.createHttpServer()
 </div>
 </div>
     <aside class="notes">
-        * Similar to express
-        * Routing requests
+        <ul>
+            <li>Similar to express</li>
+            <li>Routing requests</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -221,7 +230,9 @@ subRouter.route("/hello").handler(rc -&gt; {
 </div>
 </div>
     <aside class="notes">
-     * subrouters great to modularize and reuse routes
+        <ul>
+            <li>subrouters great to modularize and reuse routes</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -276,6 +287,11 @@ subRouter.route("/hello").handler(rc -&gt; {
 	}</code></pre>
 </div>
 </div>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">Eclipse Vert.x</span> - Pitfalls #1</h2>
@@ -291,30 +307,9 @@ subRouter.route("/hello").handler(rc -&gt; {
   <p>Each Vert.x instance creates its own threadpool</p>
 </span>
     <aside class="notes">
-		* Each Vert.x instance creates eventloop, worker thread pool
-    </aside>
-</section>
-<section>
-<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #2</h2>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">final String ADDR = "dummy";
-Vertx vertx = Vertx.vertx();
-EventBus bus = vertx.eventBus();
-
-bus.consumer(ADDR, rh -&gt; {
-	bus.publish(ADDR, "hello-world");
-	bus.publish(ADDR, "hello-world");
-});
-
-bus.publish(ADDR, "hello-world");</code></pre>
-</div>
-</div>
-<span class="fragment">
-    <img src="images/vertx-eventbus-bomb.png" alt="vertx eventbus bomb">
-</span>
-    <aside class="notes">
-        * Eventbus loops can cause problems
+      <ul>
+        <li>Each Vert.x instance creates eventloop, worker thread pool</li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -330,7 +325,9 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </ul>
 </div>
     <aside class="notes">
-        * Issues sometimes are only revealed under load
+        <ul>
+            <li>Issues sometimes are only revealed under load</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -348,7 +345,9 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </div>
 </div>
     <aside class="notes">
-        * Multiple verticles to process request concurrently
+        <ul>
+            <li>Multiple verticles to process request concurrently</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -366,9 +365,11 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </div>
 </div>
     <aside class="notes">
-        * Each verticle has its own eventloop
-        * Thus handlers may be invoked concurrently
-        * Shared classes/handlers may not be threadsafe
+        <ul>
+            <li>Each verticle has its own eventloop</li>
+            <li>Thus handlers may be invoked concurrently</li>
+            <li>Shared classes/handlers may not be threadsafe</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -397,6 +398,9 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </ul>
 </div>
     <aside class="notes">
+    <ul>
+        <li>Full example which shows possible implementation</li>
+    </ul>
     </aside>
 </section>
 <section>
@@ -442,6 +446,12 @@ bus.publish(ADDR, "hello-world");</code></pre>
 </li>
 </ul>
 </div>
+<aside class="notes">
+    <ul>
+        <li>Extremely useful when handling async data flows</li>
+        <li>Chaining requests</li>
+    </ul>
+</aside>
 </section>
 <section>
 <h2><span class="component">RxJava2</span> - Chaining Requests</h2>
@@ -465,6 +475,12 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 }).subscribe();</code></pre>
 </div>
 </div>
+<aside class="notes">
+    <ul>
+        <li>Goal: Create four nodes for famous marvel heros</li>
+        <li>We need: Project name</li>
+    </ul>
+</aside>
 </section>
 <section>
 <h2><span class="component">RxJava2</span> - Vert.x</h2>
@@ -487,9 +503,20 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </div>
+<aside class="notes">
+    <ul>
+        <li>Wrapper for RxJava2</li>
+        <li>Wrapper for Filesystem, Request handling, Eventbus</li>
+    </ul>
+</aside>
 </section>
 <section>
 <h1>GraphQL</h1>
+  <aside class="notes">
+      <ul>
+        <li>Pause</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Intro</h2>
@@ -510,9 +537,11 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </ul>
 </div>
     <aside class="notes">
-        * Describe data domain via schema
-        * Use query to ask for data
-        * Get data which matches the query
+        <ul>
+            <li>Describe data domain via schema</li>
+            <li>Use query to ask for data</li>
+            <li>Get data which matches the query</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -534,11 +563,14 @@ Vertx vertx = Vertx.vertx();</code></pre>
 }</code></pre>
 </div>
 </div>
-    <aside class="notes">
-      * Typical Gentics Mesh query
-      * We query for weight, price, slug and description
-      * Union types can be used to handle dynamic results
-    </aside>
+<aside class="notes">
+  <ul>
+    <li>A webserver can accept the query via HTTP</li>
+    <li>Typical Gentics Mesh query</li>
+    <li>We query: <strong>weight</strong>, <strong>price</strong>, <strong>slug</strong>, <strong>description</strong></li>
+    <li>Union types -> Dynamic types ->  can be used to handle dynamic results</li>
+  </ul>
+</aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Result</h2>
@@ -562,26 +594,26 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </div>
 </div>
     <aside class="notes">
-      * Result data similar to query
+      <ul>
+        <li>Result data match up with input query</li>
+      </ul>
     </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - GraphiQL</h2>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>demo.getmesh.io/api/v1/demo/graphql/browser</p>
-</li>
-</ul>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/graphiql.png" alt="graphiql">
 </div>
 </div>
-    <aside class="notes">
-        * Convenient way to explore GraphQL schema
-    </aside>
+<aside class="notes">
+    <ul>
+        <li>Convenient way to explore GraphQL schema</li>
+    </ul>
+</aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Choice</h2>
@@ -601,22 +633,12 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </li>
 </ul>
 </div>
-</section>
-<section>
-<h2><span class="component">GraphQL</span> - Underfetching</h2>
-<div class="paragraph">
-<p>The response of the server is lacking information you need</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8594; Execute additional requests to load the data</p>
-</li>
-<li>
-<p>&#8594; Causes additional delays</p>
-</li>
-</ul>
-</div>
+<aside class="notes">
+    <ul>
+        <li>GraphQL shines add handling deeply nested data structures</li>
+        <li>Next: Overfetching</li>
+    </ul>
+</aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Overfetching</h2>
@@ -633,6 +655,33 @@ Vertx vertx = Vertx.vertx();</code></pre>
 </li>
 </ul>
 </div>
+<aside class="notes">
+    <ul>
+        <li>Results in: Higher Load</li>
+        <li>Next: Underfetching</li>
+    </ul>
+</aside>
+</section>
+<section>
+<h2><span class="component">GraphQL</span> - Underfetching</h2>
+<div class="paragraph">
+<p>The response of the server is lacking information you need</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8594; Execute additional requests to load the data</p>
+</li>
+<li>
+<p>&#8594; Causes additional delays</p>
+</li>
+</ul>
+</div>
+<aside class="notes">
+    <ul>
+        <li>Results in additional latency</li>
+    </ul>
+</aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Pitfalls</h2>
@@ -644,8 +693,16 @@ Vertx vertx = Vertx.vertx();</code></pre>
 <li>
 <p>Error handling done via JSON</p>
 </li>
+<li>
+<p>Not easy to create Types/POJOs for results</p>
+</li>
 </ul>
 </div>
+  <aside class="notes">
+      <ul>
+        <li>Types are <strong>bound to the structure</strong> of the response and thus <strong>to the query</strong></li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - GraphQL-Java</h2>
@@ -690,6 +747,11 @@ Vertx vertx = Vertx.vertx();</code></pre>
 }</code></pre>
 </div>
 </div>
+    <aside class="notes">
+      <ul>
+        <li>Simple POJO which references the demo object</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
@@ -718,6 +780,11 @@ Vertx vertx = Vertx.vertx();</code></pre>
 }</code></pre>
 </div>
 </div>
+    <aside class="notes">
+      <ul>
+        <li>Simple POJO which will be later-on utilized</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Schema #1</h2>
@@ -848,8 +915,10 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 </ul>
 </div>
     <aside class="notes">
-        * Elements which were visited in the transaction will be cached
-        * GraphDB domain model can be mapped to GraphQL schemas
+        <ul>
+            <li>Elements which were visited in the transaction will be cached</li>
+            <li>GraphDB domain model can be mapped to GraphQL schemas</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -869,6 +938,12 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 <img src="images/graphql-profiling.png" alt="graphql profiling">
 </div>
 </div>
+  <aside class="notes">
+      <ul>
+        <li>Profiling very expressive</li>
+        <li>Easy to narrow down performance issues</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Examples</h2>
@@ -883,10 +958,12 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 </ul>
 </div>
     <aside class="notes">
-        * Example shows argument handling
-        * Integration with OrientDB
-        * Integration with Vert.x
-        * Error handling
+        <ul>
+            <li>Example shows argument handling</li>
+            <li>Integration with OrientDB</li>
+            <li>Integration with Vert.x</li>
+            <li>Error handling</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -902,8 +979,16 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 <li>
 <p>Highly scaleable</p>
 </li>
+<li>
+<p>Based on Apache Lucene</p>
+</li>
 </ul>
 </div>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">Elasticsearch</span> - Mesh</h2>
@@ -928,57 +1013,20 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 </ul>
 </div>
     <aside class="notes">
-        * Document property switches from string to number
-        * Dynamic mappings on by-default
+    <ul>
+        <li>Document property switches from string to number</li>
+        <li>Dynamic mappings on by-default</li>
+    </ul>
     </aside>
 </section>
 <section>
-<h2><span class="component">Elasticsearch</span> - Syncing</h2>
-<div class="paragraph">
-<p>Differential sync per index</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Assign hashsum to each document</p>
-</li>
-<li>
-<p>Collect hashsums of all elements in the graph</p>
-</li>
-<li>
-<p>Collect hashsums of all elements in the index</p>
-</li>
-</ul>
-</div>
-</section>
-<section>
-<h2><span class="component">Elasticsearch</span> - Syncing</h2>
-<div class="ulist">
-<ul>
-<li>
-<p>Compare using Google Guava:</p>
-</li>
-<li>
-<p><code>com.google.common.collect.Maps#difference</code></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Map&lt;String, String&gt; sourceVersions = loadVersionsFromGraph();
-
-Map&lt;String, String&gt; sinkVersions = loadVersionsFromIndex(indexName);
-MapDifference&lt;String, String&gt; diff = Maps.difference(sourceVersions,
-                                       sinkVersions);
-
-Set&lt;String&gt; needInsertionInES = diff.entriesOnlyOnLeft().keySet();
-Set&lt;String&gt; needRemovalInES = diff.entriesOnlyOnRight().keySet();
-Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
-</div>
-</div>
-</section>
-<section>
 <h1>GraphDB</h1>
+  <aside class="notes">
+      <ul>
+        <li>Pause</li>
+        <li>Next: Talk about Storage Side - GraphDB</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphDB</span></h2>
@@ -1000,6 +1048,15 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 <img src="images/graph-stack.png" alt="graph stack">
 </div>
 </div>
+    <aside class="notes">
+      <ul>
+        <li>Shortcut to Graph API to boost performance</li>
+        <li>OrientDB is Multimodel DB</li>
+        <li>We only use Graph API</li>
+        <li>OrientDB provides Impl of Tinkerpop</li>
+        <li>Tinkerpop very low level</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphDB</span> - Apache Tinkerpop</h2>
@@ -1019,9 +1076,30 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">TinkerGraph graph = TinkerGraph.open();
+GraphTraversalSource g = graph.traversal();
+
+Vertex johannes = g.addV("name", "johannes").next();
+Vertex tinkerpop = g.addV("name", "tinkerpop").next();
+Edge egde = johannes.addEdge("presents", tinkerpop);</code></pre>
+</div>
+</div>
+    <aside class="notes">
+      <ul>
+        <li>Low Level API</li>
+        <li>Main elements: Edge, Vertex</li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">GraphDB</span> - Gremlin</h2>
+<div class="imageblock">
+<div class="content">
+<img src="images/gremlin.png" alt="gremlin">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1037,8 +1115,10 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </div>
     <aside class="notes">
-      * Is part of Tinkerpop
-      * Can be directly used within Java
+      <ul>
+        <li>Is part of Tinkerpop</li>
+        <li>Can be directly used within Java</li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -1057,8 +1137,10 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </ul>
 </div>
     <aside class="notes">
-        * Maps vertices and edges to Java objects
-        * Essentially wraps Tinkerpop elements with custom high level classes
+        <ul>
+            <li>Maps vertices and edges to Java objects</li>
+            <li>Essentially wraps Tinkerpop elements with custom high level classes</li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -1069,6 +1151,9 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </div>
     <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
     </aside>
 </section>
 <section>
@@ -1079,6 +1164,9 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </div>
     <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -1098,7 +1186,9 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </div>
 </div>
     <aside class="notes">
-
+		<ul>
+			<li>Wrapper for Tinkerpop elements</li>
+		</ul>
     </aside>
 </section>
 <section>
@@ -1129,6 +1219,11 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </li>
 </ul>
 </div>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h1>Dagger2 - Dependency Injection</h1>
@@ -1149,9 +1244,11 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </ul>
 </div>
 	<aside class="notes">
-      * DI code gets generated
-      * DI issues are revealed during compile time
-    </aside>
+    <ul>
+      <li>DI code gets generated</li>a
+      <li>DI issues are revealed during <strong>compile time</strong></li>
+    </ul>
+  </aside>
 </section>
 <section>
 <h2><span class="component">Dagger2</span> - Dependency Injection</h2>
@@ -1169,8 +1266,10 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </ul>
 </div>
 	<aside class="notes">
-		* Bindings -> Swap Implementation -> Elasticsearch Provider
-		* Easier for testing
+		<ul>
+			<li>Bindings -> Swap Implementation -> Elasticsearch Provider</li>
+			<li>Easier for testing</li>
+		</ul>
 	</aside>
 </section>
 <section>
@@ -1186,9 +1285,11 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
 </ul>
 </div>
     <aside class="notes">
-      * Less dependencies
-      * Spring DI classpath scanning was very costly
-      * Downside: No more dynamic DI injection (-> Plugin System)
+      <ul>
+        <li>Less dependencies</li>
+        <li>Spring DI classpath scanning was very costly</li>
+        <li>Downside: No more dynamic DI injection (-> Plugin System)</li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -1218,8 +1319,10 @@ public interface AppComponent {
 </div>
 </div>
     <aside class="notes">
-      * Starting point for dagger
-      * Builder used to inject already existing dependencies into dagger
+      <ul>
+        <li>Starting point for dagger</li>
+        <li>Builder used to inject already existing dependencies into dagger</li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -1244,8 +1347,10 @@ public class HelloService {
 </div>
 </div>
     <aside class="notes">
-      * Service is injectable
-      * Service has dependencies
+      <ul>
+        <li>Service is injectable</li>
+        <li>Service has dependencies</li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -1269,7 +1374,9 @@ System.out.println(app.hello().getResult());</code></pre>
 </div>
 </div>
     <aside class="notes">
-      * Dagger generates component factory for each found component class
+      <ul>
+        <li>Dagger generates component factory for each found component class</li>
+      </ul>
     </aside>
 </section>
 <section>
@@ -1345,7 +1452,9 @@ System.out.println(app.hello().getResult());</code></pre>
 </div>
 </div>
 	<aside class="notes">
-        * Dagger code often needs to be fully regenerated
+		<ul>
+			<li>Dagger code often needs to be fully regenerated</li>
+		</ul>
     </aside>
 </section>
 <section>

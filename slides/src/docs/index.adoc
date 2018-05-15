@@ -48,8 +48,8 @@ include::slides/graphql/intro-output.adoc[]
 include::slides/graphql/graphiql.adoc[]
 
 include::slides/graphql/choice.adoc[]
-include::slides/graphql/underfetching.adoc[]
 include::slides/graphql/overfetching.adoc[]
+include::slides/graphql/underfetching.adoc[]
 include::slides/graphql/pitfalls.adoc[]
 
 include::slides/graphql/java-intro.adoc[]

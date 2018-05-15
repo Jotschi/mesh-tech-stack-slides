@@ -21,5 +21,10 @@ Set<String> needUpdate = diff.entriesDiffering().keySet();
 ----
 
 ++++
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 ++++

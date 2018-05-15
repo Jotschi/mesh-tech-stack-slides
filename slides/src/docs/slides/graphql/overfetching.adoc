@@ -9,5 +9,11 @@ The response of the server contains more information then you need
 * -> Causes additional delays and load on the system
 
 ++++
+<aside class="notes">
+    <ul>
+        <li>Results in: Higher Load</li>
+        <li>Next: Underfetching</li>
+    </ul>
+</aside>
 </section>
 ++++

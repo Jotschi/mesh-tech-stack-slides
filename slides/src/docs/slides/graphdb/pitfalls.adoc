@@ -7,6 +7,11 @@
 * Transaction handling is still very vendor specific
 
 ++++
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 ++++
 

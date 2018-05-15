@@ -26,6 +26,22 @@
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">TinkerGraph graph = TinkerGraph.open();
+GraphTraversalSource g = graph.traversal();
+
+Vertex johannes = g.addV("name", "johannes").next();
+Vertex tinkerpop = g.addV("name", "tinkerpop").next();
+Edge egde = johannes.addEdge("presents", tinkerpop);</code></pre>
+</div>
+</div>
+    <aside class="notes">
+      <ul>
+        <li>Low Level API</li>
+        <li>Main elements: Edge, Vertex</li>
+      </ul>
+    </aside>
 </section>
 </div>
 </div>

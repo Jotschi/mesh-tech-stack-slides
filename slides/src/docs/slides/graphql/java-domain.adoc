@@ -11,5 +11,10 @@ include::../../../../../graphql/src/main/java/com/gentics/graphql/domain/RootEle
 ----
 
 ++++
+    <aside class="notes">
+      <ul>
+        <li>Simple POJO which references the demo object</li>
+      </ul>
+    </aside>
 </section>
 ++++

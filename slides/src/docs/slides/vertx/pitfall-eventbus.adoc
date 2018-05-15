@@ -17,7 +17,9 @@ include::../../../../../vertx/src/test/java/com/gentics/vertx/VertxPitfallTest.j
 
 ++++
     <aside class="notes">
-        * Eventbus loops can cause problems
+        <ul>
+            <li>Eventbus loops can cause problems</li>
+        </ul>
     </aside>
 </section>
 ++++

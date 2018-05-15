@@ -8,7 +8,23 @@
 * Supported by many graph database vendors
 * Gremlin Traversal Language
 
+[source,java]
+----
+TinkerGraph graph = TinkerGraph.open();
+GraphTraversalSource g = graph.traversal();
+
+Vertex johannes = g.addV("name", "johannes").next();
+Vertex tinkerpop = g.addV("name", "tinkerpop").next();
+Edge egde = johannes.addEdge("presents", tinkerpop);
+----
+
 ++++
+    <aside class="notes">
+      <ul>
+        <li>Low Level API</li>
+        <li>Main elements: Edge, Vertex</li>
+      </ul>
+    </aside>
 </section>
 ++++
 

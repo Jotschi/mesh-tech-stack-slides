@@ -13,13 +13,15 @@
 
 ++++
 	<aside class="notes">
-		* Vert.x for HTTP
-		* OrientDB for Storage
-		* Elasticsearch for Search
-		* Dagger2 for DI
-		* RxJava2 for Clean RX code
-		* GraphQL Java for querying data
-		* Hazelcast for Clustering
+		<ul>
+			<li>Vert.x for HTTP</li>
+			<li>OrientDB for Storage</li>
+			<li>Elasticsearch for Search</li>
+			<li>Dagger2 for DI</li>
+			<li>RxJava2 for Clean RX code</li>
+			<li>GraphQL Java for querying data</li>
+			<li>Hazelcast for Clustering</li>
+		</ul>
 	</aside>
 </section>
 ++++

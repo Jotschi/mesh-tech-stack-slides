@@ -20,7 +20,9 @@ image::dagger-eclipse-ide.png[]
 
 ++++
 	<aside class="notes">
-        * Dagger code often needs to be fully regenerated
+		<ul>
+			<li>Dagger code often needs to be fully regenerated</li>
+		</ul>
     </aside>
 </section>
 ++++

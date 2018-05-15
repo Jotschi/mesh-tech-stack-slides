@@ -6,10 +6,13 @@
 * Lightweight and modern web framework
 * Embeddable Graph Database
 * Contents must be searchable
+* Scalability
 
 ++++
 	<aside class="notes">
-		* Compare to older stacks (e.g. Java EE?)
+		<ul>
+			<li>Compare to older stacks (e.g. Java EE?)</li>
+		</ul>
 	</aside>
 </section>
 ++++
