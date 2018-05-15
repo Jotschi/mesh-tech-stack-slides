@@ -8,14 +8,19 @@
 <h3>Examples on Github</h3>
 ++++
 
-https://github.com/jotschi/mesh-tech-stack-workshop
+https://github.com/jotschi/mesh-tech-stack-slides
 
 ++++
 <h3>Slides</h3>
 ++++
 
-https://jotschi.github.io/mesh-tech-stack-workshop
+https://jotschi.github.io/mesh-tech-stack-slides
 
 ++++
+<aside class="notes">
+    <ul>
+        <li>Questions?</li>
+    </ul>
+</aside>
 </section>
 ++++

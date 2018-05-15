@@ -5,6 +5,11 @@
 <p>by</p>
 <p>Johannes Schüth</p>
 <p>Lead Developer of Gentics Mesh</p>
-
+<aside class="notes">
+    <ul>
+        <li>Greetings</li>
+        <li>I'm going to present</li>
+    </ul>
+</aside>
 </section>
 ++++

@@ -8,6 +8,11 @@
 * https://github.com/vert-x3/vertx-awesome
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++
 

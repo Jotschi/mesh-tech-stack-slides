@@ -9,5 +9,10 @@ include::../../../../../graphql/src/main/java/com/gentics/graphql/DemoSchema.jav
 ----
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++

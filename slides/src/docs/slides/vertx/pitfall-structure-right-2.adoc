@@ -11,9 +11,9 @@ https://github.com/Jotschi/vertx-router-example
 
 ++++
     <aside class="notes">
-    <ul>
-        <li>Full example which shows possible implementation</li>
-    </ul>
+        <ul>
+            <li>Full example which shows possible implementation</li>
+        </ul>
     </aside>
 </section>
 ++++

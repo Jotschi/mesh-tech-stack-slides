@@ -16,5 +16,10 @@ include::../../../../../vertx/src/main/java/com/gentics/vertx/VertxVerticleExamp
 ----
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++

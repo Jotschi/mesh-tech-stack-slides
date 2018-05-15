@@ -6,7 +6,6 @@
 image::graph-stack.png[]
 
 ++++
-
     <aside class="notes">
       <ul>
         <li>Shortcut to Graph API to boost performance</li>

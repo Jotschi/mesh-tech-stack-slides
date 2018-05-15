@@ -1,5 +1,10 @@
 ++++
 <section>
 <h1>Gentics Mesh Technology Stack</h1>
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++

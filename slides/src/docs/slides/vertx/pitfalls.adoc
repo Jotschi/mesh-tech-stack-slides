@@ -9,8 +9,12 @@
 * Vertx-web sharing routers between verticles
 * Using verticles to structure endpoints
 * Sharing the Vert.x webclient between verticles
-* Blocking in the executeBlocking result handler
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++

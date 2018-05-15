@@ -10,5 +10,10 @@
 image::github-graph.png[]
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++

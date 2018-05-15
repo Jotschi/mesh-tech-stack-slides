@@ -11,5 +11,10 @@ http://vertx.io
 * Modular / General purpose
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++

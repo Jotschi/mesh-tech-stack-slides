@@ -10,11 +10,11 @@ Solves problems
 * Loading deeply nested data structures
 
 ++++
-<aside class="notes">
-    <ul>
-        <li>GraphQL shines add handling deeply nested data structures</li>
-        <li>Next: Overfetching</li>        
-    </ul>
-</aside>
+    <aside class="notes">
+        <ul>
+            <li>GraphQL shines add handling deeply nested data structures</li>
+            <li>Next: Overfetching</li>        
+        </ul>
+    </aside>
 </section>
 ++++

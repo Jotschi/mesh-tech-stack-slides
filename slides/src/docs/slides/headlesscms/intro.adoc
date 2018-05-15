@@ -6,6 +6,14 @@
 * back-end only CMS
 * Contents can be accessed via RESTful API
 
+image::headless-cms.png[]
+
+
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++
