@@ -4,11 +4,7 @@
 ++++
 
 * Blocking the eventloop
-* Blocking the worker pool
-* Forgetting about open file handles
-* Vertx-web sharing routers between verticles
 * Using verticles to structure endpoints
-* Sharing the Vert.x webclient between verticles
 
 ++++
     <aside class="notes">

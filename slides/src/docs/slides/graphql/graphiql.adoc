@@ -11,6 +11,7 @@ image::graphiql.png[]
 <aside class="notes">
     <ul>
         <li>Convenient way to explore GraphQL schema</li>
+        <li>Web based console to explore the API</li>
     </ul>
 </aside>
 </section>

@@ -21,23 +21,23 @@ include::slides/stack/stack.adoc[]
 include::slides/vertx/chapter.adoc[]
 include::slides/vertx/intro.adoc[]
 include::slides/vertx/web.adoc[]
-include::slides/vertx/routing.adoc[]
-include::slides/vertx/verticles.adoc[]
-include::slides/vertx/verticles-2.adoc[]
-include::slides/vertx/pitfall-threads.adoc[]
+//include::slides/vertx/routing.adoc[]
+//include::slides/vertx/verticles.adoc[]
+//include::slides/vertx/verticles-2.adoc[]
+//include::slides/vertx/pitfall-threads.adoc[]
 //include::slides/vertx/pitfall-eventbus.adoc[]
 include::slides/vertx/pitfall-structure-intro.adoc[]
 include::slides/vertx/pitfall-structure-wrong.adoc[]
 include::slides/vertx/pitfall-structure-wrong-2.adoc[]
 include::slides/vertx/pitfall-structure-right.adoc[]
-include::slides/vertx/pitfall-structure-right-2.adoc[]
-include::slides/vertx/pitfalls.adoc[]
+//include::slides/vertx/pitfall-structure-right-2.adoc[]
+//include::slides/vertx/pitfalls.adoc[]
 
 // RxJava2
 include::slides/rxjava2/chapter.adoc[]
 include::slides/rxjava2/intro.adoc[]
 include::slides/rxjava2/problem.adoc[]
-include::slides/rxjava2/vertx.adoc[]
+//include::slides/rxjava2/vertx.adoc[]
 
 // GraphQL
 include::slides/graphql/chapter.adoc[]
@@ -45,7 +45,7 @@ include::slides/graphql/chapter.adoc[]
 include::slides/graphql/intro.adoc[]
 include::slides/graphql/intro-query.adoc[]
 include::slides/graphql/intro-output.adoc[]
-include::slides/graphql/graphiql.adoc[]
+//include::slides/graphql/graphiql.adoc[]
 
 include::slides/graphql/choice.adoc[]
 include::slides/graphql/overfetching.adoc[]
@@ -64,10 +64,10 @@ include::slides/graphql/profiling.adoc[]
 include::slides/graphql/further-examples.adoc[]
 
 // Elasticsearch
-include::slides/elasticsearch/chapter.adoc[]
-include::slides/elasticsearch/intro.adoc[]
-include::slides/elasticsearch/mesh.adoc[]
-include::slides/elasticsearch/pitfalls.adoc[]
+//include::slides/elasticsearch/chapter.adoc[]
+//include::slides/elasticsearch/intro.adoc[]
+//include::slides/elasticsearch/mesh.adoc[]
+//include::slides/elasticsearch/pitfalls.adoc[]
 //include::slides/elasticsearch/sync-diff-1.adoc[]
 //include::slides/elasticsearch/sync-diff-2.adoc[]
 
@@ -78,24 +78,24 @@ include::slides/graphdb/overview.adoc[]
 
 // GraphDB - Tinkerpop
 include::slides/graphdb/tinkerpop.adoc[]
-include::slides/graphdb/gremlin.adoc[]
+//include::slides/graphdb/gremlin.adoc[]
 
 // GraphDB - Ferma
 include::slides/graphdb/ferma.adoc[]
 include::slides/graphdb/ferma-model-1.adoc[]
-include::slides/graphdb/ferma-model-2.adoc[]
-include::slides/graphdb/ferma-example.adoc[]
+//include::slides/graphdb/ferma-model-2.adoc[]
+//include::slides/graphdb/ferma-example.adoc[]
 
 // GraphDB - OrientDB
 include::slides/graphdb/orientdb-intro.adoc[]
-include::slides/graphdb/pitfalls.adoc[]
+//include::slides/graphdb/pitfalls.adoc[]
 
 // Dagger2
 include::slides/dagger2/chapter.adoc[]
 
 include::slides/dagger2/intro.adoc[]
 include::slides/dagger2/problem.adoc[]
-include::slides/dagger2/choice.adoc[]
+//include::slides/dagger2/choice.adoc[]
 
 include::slides/dagger2/java-example.adoc[]
 include::slides/dagger2/java-example2.adoc[]

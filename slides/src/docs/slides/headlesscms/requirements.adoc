@@ -3,17 +3,19 @@
 <h2>Headless CMS - Requirements</h2>
 ++++
 
+* multi language support
 * binary storage
-* searchable contents
 * image resizing
 * manage contents in tree structures
-* versioning
 * link handling
+* versioning
+* searchable contents
 
 ++++
     <aside class="notes">
         <ul>
-            <li></li>
+            <li>Requirements are considered normal for a CMS</li>
+            <li>well defined API</li>
         </ul>
     </aside>
 </section>

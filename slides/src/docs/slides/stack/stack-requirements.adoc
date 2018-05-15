@@ -11,7 +11,10 @@
 ++++
 	<aside class="notes">
 		<ul>
-			<li>Compare to older stacks (e.g. Java EE?)</li>
+			<li>Choice of the stack</li>
+			<li>Embedded DB for nice user XP and performance</li>
+			<li>Search engine</li>
+			<li>Last but not least</li>
 		</ul>
 	</aside>
 </section>

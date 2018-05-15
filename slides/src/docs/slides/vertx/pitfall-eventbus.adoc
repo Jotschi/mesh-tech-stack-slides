@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #2</h2>
+<h2><span class="component">Eclipse Vert.x</span> - Pitfalls #3</h2>
 ++++
 
 [source,java,indent=0]

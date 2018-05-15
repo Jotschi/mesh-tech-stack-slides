@@ -6,6 +6,11 @@
 * **Store** Gentics Mesh elements in indices (Users, Nodes, Groups)
 
 ++++
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
 </section>
 ++++
 

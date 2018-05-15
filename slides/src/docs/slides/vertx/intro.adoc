@@ -7,13 +7,15 @@ http://vertx.io
 
 * Swiss army knife for HTTP
 * Reactive Framework
-* Async API
+* Async API (Datastorage, Filesystem, HTTP)
 * Modular / General purpose
 
 ++++
     <aside class="notes">
         <ul>
-            <li></li>
+            <li>Not yet seen any other framework that versatile.</li>
+            <li>Reactive: Dataflows very important and guide the implementation of the application</li>
+            <li>Pick a few parts and only use those</li>
         </ul>
     </aside>
 </section>
