@@ -279,7 +279,7 @@ vertx.createHttpServer()
 </div>
     <aside class="notes">
         <ul>
-            <li>Issues sometimes are only revealed under load</li>
+            <li>Flexibility -> Project setup issues</li>
         </ul>
     </aside>
 </section>
@@ -445,7 +445,22 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
         weight
         price
         slug
-        description
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
+  "data": {
+    "node": {
+      "uuid": "f915b16fa68f40e395b16fa68f10e32d",
+      "fields": {
+        "weight": 22700,
+        "price": 192000000000,
+        "slug": "space-shuttle"
       }
     }
   }
@@ -460,33 +475,6 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
     <li>Union types -> Dynamic types ->  can be used to handle dynamic results</li>
   </ul>
 </aside>
-</section>
-<section>
-<h2><span class="component">GraphQL</span> - Result</h2>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
-  "data": {
-    "node": {
-      "uuid": "f915b16fa68f40e395b16fa68f10e32d",
-      "fields": {
-        "weight": 22700,
-        "price": 192000000000,
-        "slug": "space-shuttle",
-        "description": "The Space Shuttle was a partially reusable
-         low Earth orbital spacecraft system operated by the U.S.
-         National Aeronautics and Space Administration (NASA)."
-      }
-    }
-  }
-}</code></pre>
-</div>
-</div>
-    <aside class="notes">
-      <ul>
-        <li>Result data match up with input query</li>
-      </ul>
-    </aside>
 </section>
 <section>
 <h2><span class="component">GraphQL</span> - Choice</h2>
@@ -607,20 +595,20 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 <section>
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
 <div class="paragraph">
-<p>RootElement references Demo</p>
+<p>The <code>Conference</code> references a <code>Workshop</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class RootElement {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Conference {
 
-	private final Demo demo;
+	private final Workshop workshop;
 
-	public RootElement(Demo demo) {
-		this.demo = demo;
+	public Conference(Workshop workshop) {
+		this.workshop = workshop;
 	}
 
-	public Demo getDemo() {
-		return demo;
+	public Workshop getWorkshop() {
+		return workshop;
 	}
 }</code></pre>
 </div>
@@ -634,16 +622,16 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 <section>
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
 <div class="paragraph">
-<p>Demo object contains <code>id</code> and <code>name</code></p>
+<p>A workshop has an <code>id</code> and a <code>name</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Demo {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class Workshop {
 
 	private final String name;
-	private final String id;
+	private final long id;
 
-	public Demo(String id, String name) {
+	public Workshop(long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -652,7 +640,7 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 		return name;
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 }</code></pre>
@@ -677,19 +665,16 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createDemoType() {
-	return newObject().name("Demo")
-		.description("A demo element")
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createQueryType() {
+	return newObject().name("QueryType")
 
-		// .id
-		.field(newFieldDefinition().name("id")
-			.description("The id of the character.")
-			.type(new GraphQLNonNull(GraphQLString)))
-
-		// .name
-		.field(newFieldDefinition().name("name")
-			.description("The name of the element.")
-			.type(GraphQLString))
+		// .workshop
+		.field(newFieldDefinition().name("workshop")
+			.type(createWorkshopType())
+			.dataFetcher((env) -&gt; {
+				Conference root = env.getSource();
+				return root.getWorkshop();
+			}))
 
 		.build();
 }</code></pre>
@@ -705,19 +690,21 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 <h2><span class="component">GraphQL</span> - Schema #2</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createQueryType() {
-	return newObject().name("QueryType")
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createWorkshopType() {
+	return newObject().name("Workshop")
+		.description("A workshop element")
 
-		// .demo
-		.field(newFieldDefinition().name("demo")
-			.type(createDemoType())
-			.dataFetcher((env) -&gt; {
-				RootElement root = env.getSource();
-				return root.getDemo();
-			}))
+		// .id
+		.field(newFieldDefinition().name("id")
+			.description("The id of the workshop.")
+			.type(new GraphQLNonNull(GraphQLLong)))
 
-		.build();
-}</code></pre>
+		// .name
+		.field(newFieldDefinition().name("name")
+			.description("The name of the workshop.")
+			.type(GraphQLString))
+
+		.build();</code></pre>
 </div>
 </div>
     <aside class="notes">
@@ -730,30 +717,31 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 <h2><span class="component">GraphQL</span> - Query</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">		// .demo
-		.field(newFieldDefinition().name("demo")
-			.type(createDemoType())
-			.dataFetcher((env) -&gt; {
-				RootElement root = env.getSource();
-				return root.getDemo();
-			}))
+<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
+    workshop {
+        name, id
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">GraphQLSchema schema = ConferenceSchema.createSchema();
 
-		.build();
-}
+Workshop demo = new Workshop(42, "Gentics Mesh Tech Stack");
+Conference rootElement = new Conference(demo);
 
-private static GraphQLObjectType createDemoType() {
-	return newObject().name("Demo")
-		.description("A demo element")
+// Execute the query
+GraphQL graphQL = newGraphQL(schema).build();
+String operation = null;
+Map&lt;String, Object&gt; variables = null;
+ExecutionInput in =
+	new ExecutionInput(query, operation, queryJson, rootElement, variables);
 
-		// .id
-		.field(newFieldDefinition().name("id")
-			.description("The id of the character.")
-			.type(new GraphQLNonNull(GraphQLString)))
+ExecutionResult result = graphQL.execute(in);
+Map&lt;String, Object&gt; data = (Map&lt;String, Object&gt;) result.getData();
 
-		// .name
-		.field(newFieldDefinition().name("name")
-			.description("The name of the element.")
-			.type(GraphQLString))</code></pre>
+System.out.println(new JsonObject(data).encodePrettily());</code></pre>
 </div>
 </div>
     <aside class="notes">
@@ -767,18 +755,8 @@ private static GraphQLObjectType createDemoType() {
 <div class="ulist">
 <ul>
 <li>
-<p>Root element is starting point of query</p>
+<p>Root element of the graph is starting point of query</p>
 </li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">RootElement root = …
-new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
 <li>
 <p>Data fetchers can load directly referenced data</p>
 </li>
@@ -797,7 +775,7 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>GraphQL thus directly traversals the GraphDB via data fetchers</p>
+<p>Data fetchers directly traverses the GraphDB</p>
 </li>
 <li>
 <p>Highly efficient</p>
@@ -819,7 +797,10 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>CPU profiling very convenient</p>
+<p>CPU profiling very expressive</p>
+</li>
+<li>
+<p>Easy to spot potential bottlenecks</p>
 </li>
 <li>
 <p>JProfiler example</p>
@@ -833,7 +814,6 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 </div>
   <aside class="notes">
       <ul>
-        <li>Profiling very expressive</li>
         <li>Easy to narrow down performance issues</li>
       </ul>
     </aside>
@@ -866,24 +846,6 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
         <li>Pause</li>
         <li>Next: Talk about Storage Side - GraphDB</li>
       </ul>
-    </aside>
-</section>
-<section>
-<h2><span class="component">GraphDB</span></h2>
-<div class="ulist">
-<ul>
-<li>
-<p>Embeddable</p>
-</li>
-<li>
-<p>Direct vendor support for Tinkerpop API</p>
-</li>
-</ul>
-</div>
-    <aside class="notes">
-        <ul>
-            <li></li>
-        </ul>
     </aside>
 </section>
 <section>
@@ -985,6 +947,9 @@ Edge egde = johannes.addEdge("presents", tinkerpop);</code></pre>
 </li>
 <li>
 <p>Directly supports Tinkerpop API</p>
+</li>
+<li>
+<p>Supports Master/Master replication</p>
 </li>
 </ul>
 </div>
@@ -1222,6 +1187,119 @@ System.out.println(app.hello().getResult());</code></pre>
         <li>Questions?</li>
     </ul>
 </aside>
+</section>
+<section>
+<h1>Elasticsearch</h1>
+</section>
+<section>
+<h2><span class="component">Elasticsearch</span> - Intro</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Java based</p>
+</li>
+<li>
+<p>Highly scaleable</p>
+</li>
+<li>
+<p>Based on Apache Lucene</p>
+</li>
+</ul>
+</div>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
+</section>
+<section>
+<h2><span class="component">Elasticsearch</span> - Mesh</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Store</strong> Gentics Mesh elements in indices (Users, Nodes, Groups)</p>
+</li>
+</ul>
+</div>
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
+</section>
+<section>
+<h2><span class="component">Elasticsearch</span> - Pitfalls</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Dynamic mapping can cause issues when input data is dynamic</p>
+</li>
+<li>
+<p>Index types are gradually being deprecated</p>
+</li>
+</ul>
+</div>
+    <aside class="notes">
+        <ul>
+            <li>Document property switches from string to number</li>
+            <li>Dynamic mappings on by-default</li>
+        </ul>
+    </aside>
+</section>
+<section>
+<h2><span class="component">Elasticsearch</span> - Syncing</h2>
+<div class="paragraph">
+<p>Differential sync per index</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assign hashsum to each document</p>
+</li>
+<li>
+<p>Collect hashsums of all elements in the graph</p>
+</li>
+<li>
+<p>Collect hashsums of all elements in the index</p>
+</li>
+</ul>
+</div>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
+</section>
+<section>
+<h2><span class="component">Elasticsearch</span> - Syncing</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Compare using Google Guava:</p>
+</li>
+<li>
+<p><code>com.google.common.collect.Maps#difference</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Map&lt;String, String&gt; sourceVersions = loadVersionsFromGraph();
+
+Map&lt;String, String&gt; sinkVersions = loadVersionsFromIndex(indexName);
+MapDifference&lt;String, String&gt; diff = Maps.difference(sourceVersions,
+                                       sinkVersions);
+
+Set&lt;String&gt; needInsertionInES = diff.entriesOnlyOnLeft().keySet();
+Set&lt;String&gt; needRemovalInES = diff.entriesOnlyOnRight().keySet();
+Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
+</div>
+</div>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 	</div>
 </div>

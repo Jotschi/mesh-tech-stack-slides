@@ -3,7 +3,8 @@
 <h2><span class="component">GraphQL</span> - Profiling</h2>
 ++++
 
-* CPU profiling very convenient
+* CPU profiling very expressive
+* Easy to spot potential bottlenecks
 * JProfiler example
 
 image::graphql-profiling.png[]
@@ -11,7 +12,6 @@ image::graphql-profiling.png[]
 ++++
   <aside class="notes">
       <ul>
-        <li>Profiling very expressive</li>
         <li>Easy to narrow down performance issues</li>
       </ul>
     </aside>

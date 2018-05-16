@@ -5,12 +5,12 @@
 
 [source,java,indent=0]
 ----
-include::../../../../../graphql/src/main/java/com/gentics/graphql/DemoSchema.java[lines=46..50]
+include::../../../../../graphql/src/main/java/com/gentics/graphql/ConferenceSchema.java[lines=47..51]
 ----
 
 [source,java,indent=0]
 ----
-include::../../../../../graphql/src/main/java/com/gentics/graphql/DemoSchema.java[lines=29..44]
+include::../../../../../graphql/src/main/java/com/gentics/graphql/ConferenceSchema.java[lines=16..28]
 ----
 
 ++++

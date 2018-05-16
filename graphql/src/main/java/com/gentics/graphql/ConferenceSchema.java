@@ -1,43 +1,44 @@
 package com.gentics.graphql;
 
 import static graphql.Scalars.GraphQLString;
+import static graphql.Scalars.GraphQLLong;
 import static graphql.schema.GraphQLFieldDefinition.newFieldDefinition;
 import static graphql.schema.GraphQLObjectType.newObject;
 
-import com.gentics.graphql.domain.RootElement;
+import com.gentics.graphql.domain.Conference;
 
 import graphql.schema.GraphQLNonNull;
 import graphql.schema.GraphQLObjectType;
 import graphql.schema.GraphQLSchema;
 
-public class DemoSchema {
+public class ConferenceSchema {
 
 	private static GraphQLObjectType createQueryType() {
 		return newObject().name("QueryType")
 
-			// .demo
-			.field(newFieldDefinition().name("demo")
-				.type(createDemoType())
+			// .workshop
+			.field(newFieldDefinition().name("workshop")
+				.type(createWorkshopType())
 				.dataFetcher((env) -> {
-					RootElement root = env.getSource();
-					return root.getDemo();
+					Conference root = env.getSource();
+					return root.getWorkshop();
 				}))
 
 			.build();
 	}
 
-	private static GraphQLObjectType createDemoType() {
-		return newObject().name("Demo")
-			.description("A demo element")
+	private static GraphQLObjectType createWorkshopType() {
+		return newObject().name("Workshop")
+			.description("A workshop element")
 
 			// .id
 			.field(newFieldDefinition().name("id")
-				.description("The id of the character.")
-				.type(new GraphQLNonNull(GraphQLString)))
+				.description("The id of the workshop.")
+				.type(new GraphQLNonNull(GraphQLLong)))
 
 			// .name
 			.field(newFieldDefinition().name("name")
-				.description("The name of the element.")
+				.description("The name of the workshop.")
 				.type(GraphQLString))
 
 			.build();

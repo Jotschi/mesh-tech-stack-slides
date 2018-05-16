@@ -12,19 +12,21 @@
 <h2><span class="component">GraphQL</span> - Schema #2</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createQueryType() {
-	return newObject().name("QueryType")
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createWorkshopType() {
+	return newObject().name("Workshop")
+		.description("A workshop element")
 
-		// .demo
-		.field(newFieldDefinition().name("demo")
-			.type(createDemoType())
-			.dataFetcher((env) -&gt; {
-				RootElement root = env.getSource();
-				return root.getDemo();
-			}))
+		// .id
+		.field(newFieldDefinition().name("id")
+			.description("The id of the workshop.")
+			.type(new GraphQLNonNull(GraphQLLong)))
 
-		.build();
-}</code></pre>
+		// .name
+		.field(newFieldDefinition().name("name")
+			.description("The name of the workshop.")
+			.type(GraphQLString))
+
+		.build();</code></pre>
 </div>
 </div>
     <aside class="notes">

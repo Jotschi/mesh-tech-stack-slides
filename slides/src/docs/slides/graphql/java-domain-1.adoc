@@ -3,11 +3,11 @@
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
 ++++
 
-Demo object contains `id` and `name`
+A workshop has an `id` and a `name`.
 
 [source,java,indent=0]
 ----
-include::../../../../../graphql/src/main/java/com/gentics/graphql/domain/Demo.java[lines=6..23]
+include::../../../../../graphql/src/main/java/com/gentics/graphql/domain/Workshop.java[lines=6..23]
 ----
 
 ++++

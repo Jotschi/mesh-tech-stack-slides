@@ -12,30 +12,31 @@
 <h2><span class="component">GraphQL</span> - Query</h2>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">		// .demo
-		.field(newFieldDefinition().name("demo")
-			.type(createDemoType())
-			.dataFetcher((env) -&gt; {
-				RootElement root = env.getSource();
-				return root.getDemo();
-			}))
+<pre class="prettyprint highlight"><code class="language-json" data-lang="json">{
+    workshop {
+        name, id
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">GraphQLSchema schema = ConferenceSchema.createSchema();
 
-		.build();
-}
+Workshop demo = new Workshop(42, "Gentics Mesh Tech Stack");
+Conference rootElement = new Conference(demo);
 
-private static GraphQLObjectType createDemoType() {
-	return newObject().name("Demo")
-		.description("A demo element")
+// Execute the query
+GraphQL graphQL = newGraphQL(schema).build();
+String operation = null;
+Map&lt;String, Object&gt; variables = null;
+ExecutionInput in =
+	new ExecutionInput(query, operation, queryJson, rootElement, variables);
 
-		// .id
-		.field(newFieldDefinition().name("id")
-			.description("The id of the character.")
-			.type(new GraphQLNonNull(GraphQLString)))
+ExecutionResult result = graphQL.execute(in);
+Map&lt;String, Object&gt; data = (Map&lt;String, Object&gt;) result.getData();
 
-		// .name
-		.field(newFieldDefinition().name("name")
-			.description("The name of the element.")
-			.type(GraphQLString))</code></pre>
+System.out.println(new JsonObject(data).encodePrettily());</code></pre>
 </div>
 </div>
     <aside class="notes">

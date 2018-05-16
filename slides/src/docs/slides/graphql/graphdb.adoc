@@ -3,14 +3,7 @@
 <h2><span class="component">GraphQL</span> - GraphDB Traversal</h2>
 ++++
 
-* Root element is starting point of query
-
-[source,java]
-----
-RootElement root = …
-new ExecutionInput(query, null, queryJson, rootElement, null);
-----
-
+* Root element of the graph is starting point of query
 * Data fetchers can load directly referenced data
 
 [source,java]
@@ -23,7 +16,7 @@ new ExecutionInput(query, null, queryJson, rootElement, null);
 …
 ----
 
-* GraphQL thus directly traversals the GraphDB via data fetchers
+* Data fetchers directly traverses the GraphDB
 * Highly efficient
 * Convenient for profiling
 

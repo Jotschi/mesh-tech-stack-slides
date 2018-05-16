@@ -9,7 +9,7 @@
 ++++
     <aside class="notes">
         <ul>
-            <li>Issues sometimes are only revealed under load</li>
+            <li>Flexibility -> Project setup issues</li>
         </ul>
     </aside>
 </section>

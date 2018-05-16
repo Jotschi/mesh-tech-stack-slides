@@ -21,19 +21,16 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createDemoType() {
-	return newObject().name("Demo")
-		.description("A demo element")
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">private static GraphQLObjectType createQueryType() {
+	return newObject().name("QueryType")
 
-		// .id
-		.field(newFieldDefinition().name("id")
-			.description("The id of the character.")
-			.type(new GraphQLNonNull(GraphQLString)))
-
-		// .name
-		.field(newFieldDefinition().name("name")
-			.description("The name of the element.")
-			.type(GraphQLString))
+		// .workshop
+		.field(newFieldDefinition().name("workshop")
+			.type(createWorkshopType())
+			.dataFetcher((env) -&gt; {
+				Conference root = env.getSource();
+				return root.getWorkshop();
+			}))
 
 		.build();
 }</code></pre>

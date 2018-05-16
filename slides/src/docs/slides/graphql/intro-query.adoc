@@ -13,7 +13,23 @@
         weight
         price
         slug
-        description
+      }
+    }
+  }
+}
+----
+
+
+[source,json]
+----
+{
+  "data": {
+    "node": {
+      "uuid": "f915b16fa68f40e395b16fa68f10e32d",
+      "fields": {
+        "weight": 22700,
+        "price": 192000000000,
+        "slug": "space-shuttle"
       }
     }
   }

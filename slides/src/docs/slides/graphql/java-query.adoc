@@ -3,9 +3,19 @@
 <h2><span class="component">GraphQL</span> - Query</h2>
 ++++
 
+[source,json,indent=0]
+----
+{
+    workshop {
+        name, id
+    }
+}
+----
+
+
 [source,java,indent=0]
 ----
-include::../../../../../graphql/src/main/java/com/gentics/graphql/DemoSchema.java[lines=18..41]
+include::../../../../../graphql/src/main/java/com/gentics/graphql/GraphQLExample.java[lines=27..42]
 ----
 
 ++++

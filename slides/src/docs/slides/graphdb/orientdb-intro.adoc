@@ -5,6 +5,7 @@
  * Java based Graph Database
  * First release in 2010
  * Directly supports Tinkerpop API
+ * Supports Master/Master replication
 ++++
     <aside class="notes">
         <ul>

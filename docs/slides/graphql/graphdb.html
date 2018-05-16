@@ -13,18 +13,8 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Root element is starting point of query</p>
+<p>Root element of the graph is starting point of query</p>
 </li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">RootElement root = …
-new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
 <li>
 <p>Data fetchers can load directly referenced data</p>
 </li>
@@ -43,7 +33,7 @@ new ExecutionInput(query, null, queryJson, rootElement, null);</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>GraphQL thus directly traversals the GraphDB via data fetchers</p>
+<p>Data fetchers directly traverses the GraphDB</p>
 </li>
 <li>
 <p>Highly efficient</p>

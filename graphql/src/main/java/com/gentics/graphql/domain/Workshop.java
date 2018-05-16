@@ -3,12 +3,12 @@ package com.gentics.graphql.domain;
 /**
  * Simple POJO which can be referenced in a query data fetcher
  */
-public class Demo {
+public class Workshop {
 
 	private final String name;
-	private final String id;
+	private final long id;
 
-	public Demo(String id, String name) {
+	public Workshop(long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -17,7 +17,7 @@ public class Demo {
 		return name;
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 }
