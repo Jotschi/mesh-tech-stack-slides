@@ -1,6 +1,6 @@
 ++++
 <section>
-<h2><span class="component">GraphQL</span> - GraphDB Traversal</h2>
+<h2><span class="component">GraphQL</span> - GraphDB</h2>
 ++++
 
 * Root element of the graph is starting point of query

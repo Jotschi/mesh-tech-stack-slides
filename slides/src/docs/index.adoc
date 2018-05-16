@@ -108,6 +108,8 @@ include::slides/elasticsearch/pitfalls.adoc[]
 include::slides/elasticsearch/sync-diff-1.adoc[]
 include::slides/elasticsearch/sync-diff-2.adoc[]
 
+include::slides/end.adoc[]
+
 
 ++++
 	</div>

@@ -1,5 +1,10 @@
 ++++
 <section>
 <h1>Elasticsearch</h1>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 ++++

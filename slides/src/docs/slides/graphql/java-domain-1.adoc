@@ -3,7 +3,7 @@
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
 ++++
 
-A workshop has an `id` and a `name`.
+A `Workshop` has an `id` and a `name`.
 
 [source,java,indent=0]
 ----

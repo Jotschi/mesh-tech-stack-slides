@@ -4,7 +4,7 @@
 ++++
 
 * back-end only CMS
-* Contents can be accessed via RESTful API
+* Access via REST API or GraphQL
 
 image::headless-cms.png[]
 

@@ -65,7 +65,7 @@
 <p>back-end only CMS</p>
 </li>
 <li>
-<p>Contents can be accessed via RESTful API</p>
+<p>Access via REST API or GraphQL</p>
 </li>
 </ul>
 </div>
@@ -165,9 +165,6 @@
 <p>OrientDB Graph Database</p>
 </li>
 <li>
-<p>Elasticsearch</p>
-</li>
-<li>
 <p>Dagger2</p>
 </li>
 <li>
@@ -175,6 +172,9 @@
 </li>
 <li>
 <p>GraphQL</p>
+</li>
+<li>
+<p>Elasticsearch</p>
 </li>
 <li>
 <p>Hazelcast</p>
@@ -622,7 +622,7 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 <section>
 <h2><span class="component">GraphQL</span> - Domain Model</h2>
 <div class="paragraph">
-<p>A workshop has an <code>id</code> and a <code>name</code>.</p>
+<p>A <code>Workshop</code> has an <code>id</code> and a <code>name</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -704,7 +704,8 @@ client.findProjectByName("MCU").toSingle().flatMapCompletable(project -&gt; {
 			.description("The name of the workshop.")
 			.type(GraphQLString))
 
-		.build();</code></pre>
+		.build();
+}</code></pre>
 </div>
 </div>
     <aside class="notes">
@@ -751,7 +752,7 @@ System.out.println(new JsonObject(data).encodePrettily());</code></pre>
     </aside>
 </section>
 <section>
-<h2><span class="component">GraphQL</span> - GraphDB Traversal</h2>
+<h2><span class="component">GraphQL</span> - GraphDB</h2>
 <div class="ulist">
 <ul>
 <li>
@@ -1190,6 +1191,11 @@ System.out.println(app.hello().getResult());</code></pre>
 </section>
 <section>
 <h1>Elasticsearch</h1>
+    <aside class="notes">
+      <ul>
+        <li></li>
+      </ul>
+    </aside>
 </section>
 <section>
 <h2><span class="component">Elasticsearch</span> - Intro</h2>
@@ -1300,6 +1306,23 @@ Set&lt;String&gt; needUpdate = diff.entriesDiffering().keySet();</code></pre>
         <li></li>
       </ul>
     </aside>
+</section>
+<section>
+<h2>Thank you</h2>
+</br></br>
+<h3>Examples on Github</h3>
+<div class="paragraph">
+<p><a href="https://github.com/jotschi/mesh-tech-stack-slides" class="bare">https://github.com/jotschi/mesh-tech-stack-slides</a></p>
+</div>
+<h3>Slides</h3>
+<div class="paragraph">
+<p><a href="https://jotschi.github.io/mesh-tech-stack-slides" class="bare">https://jotschi.github.io/mesh-tech-stack-slides</a></p>
+</div>
+<aside class="notes">
+    <ul>
+        <li>Questions?</li>
+    </ul>
+</aside>
 </section>
 	</div>
 </div>

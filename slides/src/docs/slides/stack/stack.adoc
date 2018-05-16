@@ -5,10 +5,10 @@
 
 * Eclipse Vert.x
 * OrientDB Graph Database
-* Elasticsearch
 * Dagger2
 * RxJava2
 * GraphQL
+* Elasticsearch
 * Hazelcast
 
 ++++
